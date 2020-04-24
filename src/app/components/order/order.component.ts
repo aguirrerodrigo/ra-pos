@@ -14,6 +14,10 @@ export class OrderComponent implements OnInit {
     this.items = orderService.getCurrentOrder().items;
   }
 
+  onAdd() {
+    this.items.push('New Order Item');
+  }
+
   ngOnInit(): void {
   }
 

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderService } from './services/order.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,10 @@ import { OrderService } from './services/order.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
-  providers: [OrderService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

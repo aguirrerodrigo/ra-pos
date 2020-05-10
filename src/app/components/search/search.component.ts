@@ -2,7 +2,6 @@ import { Component, Input, Output, ContentChild, TemplateRef } from '@angular/co
 import { SearchItem } from './models/search-item';
 import { TextStartsStrategy } from './models/text-starts-strategy';
 import { WordStartsStrategy } from './models/word-starts-strategy';
-import { SearchStrategy } from './models/search-strategy';
 import { BurgerWordStrategy } from './models/burger-word-strategy';
 
 @Component({
@@ -11,7 +10,7 @@ import { BurgerWordStrategy } from './models/burger-word-strategy';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  private buffer = new Map<SearchStrategy, SearchItem[]>();
+  private buffer = new Set<SearchItem>();
   result = [];
   selectedIndex = 0;
 
@@ -30,41 +29,21 @@ export class SearchComponent {
 
     this.buffer.clear();
     if(s) {
-      for(let item of this.items) {
-        for(let strategy of this.searchStrategies) {
+      for(let strategy of this.searchStrategies) {
+        for(let item of this.items) {
+          if(this.buffer.has(item)) {
+            continue;
+          }
+          
           if(item.match(s, strategy, this.caseSensitive)) {
-            this.addResult(item, strategy);
-            break;
+            this.buffer.add(item);
           }
         }
       }
     }
 
-    this.result = this.finalizeResult();
+    this.result = Array.from(this.buffer.values());
     this.selectedIndex = 0;
-  }
-
-  private addResult(item: SearchItem, strategy: SearchStrategy) {
-    if(!this.buffer.has(strategy)) {
-      this.buffer.set(strategy, []);
-    }
-
-    this.buffer.get(strategy).push(item);
-  }
-
-  private finalizeResult(): SearchItem[] {
-    const result: SearchItem[] = [];
-    
-    for(let strategy of this.searchStrategies) {
-
-      if(this.buffer.has(strategy)) {
-        for(let item of this.buffer.get(strategy)) {
-          result.push(item);
-        }
-      }
-    }
-
-    return result;
   }
 
   selectNext(): void {

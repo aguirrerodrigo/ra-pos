@@ -8,33 +8,33 @@ export class WordStartsStrategy implements SearchStrategy {
 
     match(text: string, search: string) {
         let result = new SearchResult();
-        let tokenizer = new WordTokenizer(text);
 
-        if(text.startsWith(search)) {
-            result.addMatch(0, search.length);
-        } else {
-            let index = text.indexOf(search);
-            if(index >= 0) {
-                while(tokenizer.next()) {
-                    if(tokenizer.index < index) {
-                        continue;
-                    }
+         if(text.startsWith(search)) {
+             result.addMatch(0, search.length);
+         } else {
+            let index = text.indexOf(' ' + search);
+            while(index > 0) {
+                index++;
 
-                    if(index == tokenizer.index) {
-                        if(!WordStartsStrategy.conjunctions.has(tokenizer.word)) {
-                            result.addMatch(index, search.length);
-                            break;
-                        } 
-
-                        index = text.indexOf(search, tokenizer.index + 1);
-                        if(index < 0) {
-                            break;
-                        }
-                    }
+                let word = this.getFirstWord(text, index);                
+                if(!WordStartsStrategy.conjunctions.has(word)) {
+                    result.addMatch(index, search.length);
+                    break;
                 }
+
+                index = text.indexOf(' ' + search, index + word.length);
             }
-        }
+         }
 
         return result;
+    }
+
+    getFirstWord(text: string, index: number): string {
+        let spaceIndex = text.indexOf(' ', index);
+        if(spaceIndex < 0) {
+            return text.substr(index, text.length - index);
+        } else {
+            return text.substr(index, spaceIndex - index);
+        }
     }
 }

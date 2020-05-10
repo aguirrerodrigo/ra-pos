@@ -4,6 +4,7 @@ import { TextStartsStrategy } from './models/text-starts-strategy';
 import { WordStartsStrategy } from './models/word-starts-strategy';
 import { SearchStrategy } from './models/search-strategy';
 import { BurgerWordStrategy } from './models/burger-word-strategy';
+import { log } from 'util';
 
 @Component({
   selector: 'app-search',
@@ -13,6 +14,7 @@ import { BurgerWordStrategy } from './models/burger-word-strategy';
 export class SearchComponent {
   private buffer = {};
   result = [];
+  selectedIndex = 0;
 
   @Input() searchStrategies = [new TextStartsStrategy(), new WordStartsStrategy(), new BurgerWordStrategy()];
   @Input() caseSensitive = false;
@@ -38,6 +40,7 @@ export class SearchComponent {
     }
 
     this.result = this.finalizeResult();
+    this.selectedIndex = 0;
   }
 
   private addResult(item: SearchItem, strategy: SearchStrategy) {
@@ -61,5 +64,19 @@ export class SearchComponent {
     }
 
     return result;
+  }
+
+  selectNext(): void {
+    if(this.selectedIndex < this.result.length - 1) {
+      this.selectedIndex++;
+      log(this.selectedIndex.toString());
+    }
+  }
+
+  selectPrevious(): void {
+    if(this.selectedIndex > 0) {
+      this.selectedIndex--;
+      log(this.selectedIndex.toString());
+    }
   }
 }

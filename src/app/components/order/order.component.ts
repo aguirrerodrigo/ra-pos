@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from '../../services/order.service';
-import { MenuService } from 'src/app/services/menu.service';
-import { SearchItem } from '../search/models/search-item';
+import { OrderService } from '@app/services/order.service';
 
 @Component({
   selector: 'app-order',
@@ -11,22 +9,9 @@ import { SearchItem } from '../search/models/search-item';
 export class OrderComponent implements OnInit {  
   title = 'Order';
   items: string[];
-  searchItems: SearchItem[];
 
-  constructor(private orderService: OrderService, private menuService: MenuService) { 
+  constructor(private orderService: OrderService) { 
     this.items = orderService.getCurrentOrder().items;
-    this.searchItems = this.getSearchItems();
-  }
-
-  getSearchItems(): SearchItem[] {
-    let result: SearchItem[] = [];
-
-    this.menuService.getMenu().forEach(menuItem => {
-      result.push(
-        new SearchItem(menuItem.name, menuItem));
-    });
-
-    return result;
   }
   
   onAdd(e: MouseEvent) {

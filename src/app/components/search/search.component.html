@@ -1,5 +1,11 @@
-<input #searchInput (input)="search(searchInput.value)">
-<ul>
-    <li *ngFor="let item of result" [innerHTML]="item.formattedText">
+<div class="form-group">
+    <input class="form-control" #searchInput (input)="search(searchInput.value)" (keydown.arrowdown)="selectNext()" (keydown.arrowup)="selectPrevious()" autofocus>
+</div>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action" [class.list-group-item-primary]="i == selectedIndex" *ngFor="let item of result; index as i">
+        <div class="float-left" [innerHTML]="item.formattedText"></div>
+        <div class="float-right">{{ item.item.price | currency:'PH':'P ' }}</div>
+        <br>
+        <div class="small">{{ item.item.description }}</div>
     </li>
 </ul>

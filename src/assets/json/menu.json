@@ -135,14 +135,14 @@
     "price":50
 },
 {
-    "name":"Cucumber Iced Tea - Large",
-    "description":"16oz cucumber iced tea",
-    "price":30
-},
-{
     "name":"Cucumber Iced Tea - Regular",
     "description":"12oz cucumber iced tea",
     "price":20
+},
+{
+    "name":"Cucumber Iced Tea - Large",
+    "description":"16oz cucumber iced tea",
+    "price":30
 },
 {
     "name":"Deboned Bangus",
@@ -185,9 +185,9 @@
     "price":45
 },
 {
-    "name":"Ham and Pineapple Pizza - Large",
-    "description":"9\" ham and pineapple pizza",
-    "price":70
+    "name":"Ham and Pineapple Pizza - Small",
+    "description":"7\" ham & pineapple pizza",
+    "price":45
 },
 {
     "name":"Ham and Pineapple Pizza - Medium",
@@ -195,9 +195,9 @@
     "price":70
 },
 {
-    "name":"Ham and Pineapple Pizza - Small",
-    "description":"7\" ham & pineapple pizza",
-    "price":45
+    "name":"Ham and Pineapple Pizza - Large",
+    "description":"9\" ham and pineapple pizza",
+    "price":70
 },
 {
     "name":"Hamburger",
@@ -235,14 +235,14 @@
     "price":20
 },
 {
-    "name":"Juice - Large",
-    "description":"16oz pineapple or orange juice",
-    "price":30
-},
-{
     "name":"Juice - Regular",
     "description":"12oz pineapple or orange juice",
     "price":20
+},
+{
+    "name":"Juice - Large",
+    "description":"16oz pineapple or orange juice",
+    "price":30
 },
 {
     "name":"Lomi",
@@ -285,24 +285,25 @@
     "price":270
 },
 {
-    "name":"Mozzarella Pizza - Large",
-    "description":"9\" pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
-    "price":110
-},
-{
     "name":"Mozzarella Pizza - Medium",
     "description":"8\" pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
     "price":95
 },
 {
-    "name":"Mozzarella Pizza - Pan",
-    "description":"8\" thick and fluffy pan pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
-    "price":160
+    "name":"Mozzarella Pizza - Large",
+    "description":"9\" pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
+    "price":110
 },
 {
     "name":"Mozzarella Pizza - Thin",
     "description":"8\" thin crust pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
     "price":140
+},
+
+{
+    "name":"Mozzarella Pizza - Pan",
+    "description":"8\" thick and fluffy pan pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
+    "price":160
 },
 {
     "name":"Palabok",
@@ -375,14 +376,14 @@
     "price":70
 },
 {
-    "name":"Softdrinks - Large",
-    "description":"16oz Coke, Royal, or Sprite",
-    "price":18
-},
-{
     "name":"Softdrinks - Regular",
     "description":"12oz Coke, Royal, or Sprite",
     "price":15
+},
+{
+    "name":"Softdrinks - Large",
+    "description":"16oz Coke, Royal, or Sprite",
+    "price":18
 },
 {
     "name":"Soy Garlic Chicken",

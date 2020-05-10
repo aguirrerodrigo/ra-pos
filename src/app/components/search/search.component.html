@@ -1,0 +1,5 @@
+<input #searchInput (input)="search(searchInput.value)">
+<ul>
+    <li *ngFor="let item of result" [innerHTML]="item.formattedText">
+    </li>
+</ul>

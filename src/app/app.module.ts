@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderService } from './services/order.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrderComponent
+    OrderComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

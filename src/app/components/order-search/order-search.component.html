@@ -1,1 +1,9 @@
-<app-search [items]="searchItems"></app-search>
+<app-search [items]="searchItems">
+    <ng-template class="search-item" let-item>
+        <div class="float-left">
+            <div [innerHTML]="item.formattedText"></div>
+            <div class="small">{{ item.model.description }}</div>
+        </div>
+        <div class="float-right mt-2">{{ item.model.price | currency:'PH':'P ' }}</div>
+    </ng-template>
+</app-search>

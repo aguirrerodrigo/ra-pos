@@ -5,7 +5,7 @@ export class SearchItem {
     private lowerSearchText: string;
     formattedText: string;
 
-    constructor(public searchText: string, public item: any) {
+    constructor(public searchText: string, public model: any) {
         this.lowerSearchText = searchText.toLowerCase();
     }
 

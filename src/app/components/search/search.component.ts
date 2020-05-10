@@ -1,10 +1,9 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, ContentChild, TemplateRef } from '@angular/core';
 import { SearchItem } from './models/search-item';
 import { TextStartsStrategy } from './models/text-starts-strategy';
 import { WordStartsStrategy } from './models/word-starts-strategy';
 import { SearchStrategy } from './models/search-strategy';
 import { BurgerWordStrategy } from './models/burger-word-strategy';
-import { log } from 'util';
 
 @Component({
   selector: 'app-search',
@@ -12,9 +11,11 @@ import { log } from 'util';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  private buffer = {};
+  private buffer = new Map<SearchStrategy, SearchItem[]>();
   result = [];
   selectedIndex = 0;
+
+  @ContentChild(TemplateRef) searchItemTemplate: TemplateRef<SearchItem>;
 
   @Input() searchStrategies = [new TextStartsStrategy(), new WordStartsStrategy(), new BurgerWordStrategy()];
   @Input() caseSensitive = false;
@@ -27,7 +28,7 @@ export class SearchComponent {
     if(!this.items) return;
     if(!this.searchStrategies) return;
 
-    this.buffer = {};
+    this.buffer.clear();
     if(s) {
       for(let item of this.items) {
         for(let strategy of this.searchStrategies) {
@@ -44,11 +45,11 @@ export class SearchComponent {
   }
 
   private addResult(item: SearchItem, strategy: SearchStrategy) {
-    if(!this.buffer[strategy.constructor.name]) {
-      this.buffer[strategy.constructor.name] = [];
+    if(!this.buffer.has(strategy)) {
+      this.buffer.set(strategy, []);
     }
 
-    this.buffer[strategy.constructor.name].push(item);
+    this.buffer.get(strategy).push(item);
   }
 
   private finalizeResult(): SearchItem[] {
@@ -56,8 +57,8 @@ export class SearchComponent {
     
     for(let strategy of this.searchStrategies) {
 
-      if(this.buffer[strategy.constructor.name]) {
-        for(let item of this.buffer[strategy.constructor.name]) {
+      if(this.buffer.has(strategy)) {
+        for(let item of this.buffer.get(strategy)) {
           result.push(item);
         }
       }
@@ -69,14 +70,12 @@ export class SearchComponent {
   selectNext(): void {
     if(this.selectedIndex < this.result.length - 1) {
       this.selectedIndex++;
-      log(this.selectedIndex.toString());
     }
   }
 
   selectPrevious(): void {
     if(this.selectedIndex > 0) {
       this.selectedIndex--;
-      log(this.selectedIndex.toString());
     }
   }
 }

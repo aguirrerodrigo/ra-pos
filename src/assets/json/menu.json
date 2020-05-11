@@ -439,25 +439,5 @@
       "name": "Burger Steak",
       "description": "Burger steak",
       "price": 50
-   },
-   {
-      "name": "Andre or and ordinal andrew and or order",
-      "description": "Test Data",
-      "price": 50
-   },
-   {
-      "name": "dummmy cheeseburgermachine",
-      "description": "Test Data",
-      "price": 50
-   },
-   {
-      "name": "dummy cheeseburger cheeseburgermachine burgermachine",
-      "description": "Test Data",
-      "price": 50
-   },
-   {
-      "name": "dummy cheeseburger cheeseburgermachine hamburger burgermachine",
-      "description": "Test Data",
-      "price": 50
    }
 ]

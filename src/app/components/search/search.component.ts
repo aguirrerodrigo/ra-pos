@@ -65,6 +65,12 @@ export class SearchComponent {
     this.onSelect.emit();
   }
 
+  onEscKey(e: KeyboardEvent) {
+    (e.target as HTMLInputElement).value = '';
+
+    this.search('');
+  }
+
   onItemClick(searchItem: SearchItem): void {
     this.selectedItem = searchItem;
     this.onSelect.emit();

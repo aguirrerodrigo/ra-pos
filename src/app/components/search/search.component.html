@@ -1,16 +1,26 @@
 <div class="form-group">
-    <input #searchInput 
-        class="form-control" 
-        (input)="search(searchInput.value)" 
-        (keydown.arrowdown)="onArrowDownKey()" 
-        (keydown.arrowup)="onArrowUpKey()" 
-        (keyup.enter)="onEnterKey()" 
-        (keyup.esc)="onEscKey($event)"
-        autofocus>
+   <input
+      #searchInput
+      class="form-control"
+      (input)="search(searchInput.value)"
+      (keydown.arrowdown)="onArrowDownKey()"
+      (keydown.arrowup)="onArrowUpKey()"
+      (keyup.enter)="onEnterKey()"
+      (keyup.esc)="onEscKey($event)"
+      autofocus
+   />
 </div>
 <ul class="list-group">
-    <li (click)="onItemClick(item)" class="list-group-item list-group-item-action" [class.list-group-item-primary]="i == selectedIndex" *ngFor="let item of result; index as i" >
-        <ng-container select=".search-item" *ngTemplateOutlet="searchItemTemplate; context: {$implicit: item}">
-        </ng-container>
-    </li>
+   <li
+      (click)="onItemClick(item)"
+      class="list-group-item list-group-item-action"
+      [class.list-group-item-primary]="i == selectedIndex"
+      *ngFor="let item of result; index as i"
+   >
+      <ng-container
+         select=".search-item"
+         *ngTemplateOutlet="searchItemTemplate; context: { $implicit: item }"
+      >
+      </ng-container>
+   </li>
 </ul>

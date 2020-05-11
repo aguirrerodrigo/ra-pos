@@ -1,3 +1,3 @@
 export class SearchMatch {
-     constructor(public startIndex: number, public length: number) {}
+   constructor(public startIndex: number, public length: number) {}
 }

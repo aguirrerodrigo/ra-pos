@@ -1,4 +1,4 @@
-<app-search [items]="searchItems">
+<app-search #search [items]="searchItems" (onSelect)="onSelect(search.selectedItem)">
     <ng-template class="search-item" let-item>
         <div class="float-left">
             <div [innerHTML]="item.formattedText"></div>

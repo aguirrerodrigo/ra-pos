@@ -26,4 +26,8 @@ export class OrderSearchComponent {
     return result;
   }
 
+  onSelect(searchItem: SearchItem) {
+    alert(`'Item selected: ${searchItem.model.name}`);
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, Input, Output, ContentChild, TemplateRef } from '@angular/core';
+import { Component, Input, Output, ContentChild, TemplateRef, EventEmitter } from '@angular/core';
 import { SearchItem } from './models/search-item';
 import { TextStartsStrategy } from './models/text-starts-strategy';
 import { WordStartsStrategy } from './models/word-starts-strategy';
@@ -11,7 +11,7 @@ import { BurgerWordStrategy } from './models/burger-word-strategy';
 })
 export class SearchComponent {
   private buffer = new Set<SearchItem>();
-  result = [];
+  result: SearchItem[] = [];
   selectedIndex = 0;
 
   @ContentChild(TemplateRef) searchItemTemplate: TemplateRef<SearchItem>;
@@ -20,8 +20,8 @@ export class SearchComponent {
   @Input() caseSensitive = false;
   @Input() items: SearchItem[] = [];
 
-  @Output() onSelect() {
-  }
+  @Output() selectedItem: SearchItem;
+  @Output() onSelect = new EventEmitter();
 
   search(s: string) {
     if(!this.items) return;
@@ -46,15 +46,27 @@ export class SearchComponent {
     this.selectedIndex = 0;
   }
 
-  selectNext(): void {
+  onArrowDownKey(): void {
     if(this.selectedIndex < this.result.length - 1) {
       this.selectedIndex++;
     }
   }
 
-  selectPrevious(): void {
+  onArrowUpKey(): void {
     if(this.selectedIndex > 0) {
       this.selectedIndex--;
     }
+  }
+
+  onEnterKey() {
+    if(!this.result) return;
+
+    this.selectedItem = this.result[this.selectedIndex];
+    this.onSelect.emit();
+  }
+
+  onItemClick(searchItem: SearchItem): void {
+    this.selectedItem = searchItem;
+    this.onSelect.emit();
   }
 }

@@ -16,10 +16,10 @@ describe('AppComponent', () => {
       expect(app).toBeTruthy();
    });
 
-   it(`should have as title 'MergerKing-POS'`, () => {
+   it(`should have as title 'POS'`, () => {
       const fixture = TestBed.createComponent(AppComponent);
       const app = fixture.componentInstance;
-      expect(app.title).toEqual('MergerKing-POS');
+      expect(app.title).toEqual('POS');
    });
 
    it('should render title', () => {
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
       fixture.detectChanges();
       const compiled = fixture.nativeElement;
       expect(compiled.querySelector('.content span').textContent).toContain(
-         'MergerKing-POS app is running!'
+         'ra-pos app is running!'
       );
    });
 });

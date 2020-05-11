@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('MergerKing-POS app is running!');
+    expect(page.getTitleText()).toEqual('ra-pos app is running!');
   });
 
   afterEach(async () => {

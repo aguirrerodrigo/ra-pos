@@ -6,7 +6,10 @@ export class BurgerWordStrategy implements SearchStrategy {
       let result = new SearchResult();
 
       if ('burger'.startsWith(search.toLowerCase())) {
-         let burgerIndex = text.toLowerCase().indexOf('burger');
+         let burgerIndex = text.toLowerCase().indexOf('burger ');
+         if (burgerIndex < 0 && text.endsWith('burger')) {
+            burgerIndex = text.length - 6;
+         }
 
          if (burgerIndex >= 0) {
             let index = text.indexOf(search);

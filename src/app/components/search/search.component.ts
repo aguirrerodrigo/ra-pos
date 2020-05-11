@@ -10,6 +10,8 @@ import { SearchItem } from './models/search-item';
 import { TextStartsStrategy } from './models/text-starts-strategy';
 import { WordStartsStrategy } from './models/word-starts-strategy';
 import { BurgerWordStrategy } from './models/burger-word-strategy';
+import { AcronymStrategy } from './models/acronym-strategy';
+import { BurgerAcronymStrategy } from './models/burger-acronym-strategy';
 
 @Component({
    selector: 'app-search',
@@ -26,7 +28,9 @@ export class SearchComponent {
    @Input() searchStrategies = [
       new TextStartsStrategy(),
       new WordStartsStrategy(),
-      new BurgerWordStrategy()
+      new BurgerWordStrategy(),
+      new AcronymStrategy(),
+      new BurgerAcronymStrategy()
    ];
    @Input() caseSensitive = false;
    @Input() items: SearchItem[] = [];
@@ -70,7 +74,7 @@ export class SearchComponent {
    }
 
    onEnterKey() {
-      if (!this.result) return;
+      if (!this.result || this.result.length == 0) return;
 
       this.selectedItem = this.result[this.selectedIndex];
       this.onSelect.emit();

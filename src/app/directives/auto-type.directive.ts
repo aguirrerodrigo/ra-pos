@@ -8,11 +8,15 @@ export class AutoTypeDirective {
 
    @HostListener('window:keydown', ['$event'])
    onWindowKeyDown(e: KeyboardEvent) {
-      if (e.srcElement == this.el.nativeElement) {
+      if (!this.isBody(e.target)) {
          return;
       }
 
       let elem = this.el.nativeElement as HTMLInputElement;
       elem.focus();
+   }
+
+   isBody(target: any): boolean {
+      return target.tagName.toLocaleLowerCase() == 'body';
    }
 }

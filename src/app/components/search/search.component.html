@@ -3,6 +3,7 @@
       <div class="form-group">
          <input
             #searchInput
+            appAutoType
             class="form-control"
             (input)="search(searchInput.value)"
             (keydown.arrowdown)="onArrowDownKey()"

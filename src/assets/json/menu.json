@@ -60,6 +60,11 @@
       "price": 80
    },
    {
+      "name": "Burger Steak",
+      "description": "Burger steak",
+      "price": 50
+   },
+   {
       "name": "Calamansi Juice",
       "description": "Calamansi juice",
       "price": 30
@@ -434,10 +439,5 @@
       "name": "Ube Shake",
       "description": "Ube shake (SEASONAL)",
       "price": 40
-   },
-   {
-      "name": "Burger Steak",
-      "description": "Burger steak",
-      "price": 50
    }
 ]

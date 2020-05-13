@@ -1,22 +1,22 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
-   selector: 'input[appAutoType]'
+	selector: 'input[appAutoType]'
 })
 export class AutoTypeDirective {
-   constructor(private el: ElementRef) {}
+	constructor(private el: ElementRef) {}
 
-   @HostListener('window:keydown', ['$event'])
-   onWindowKeyDown(e: KeyboardEvent) {
-      if (!this.isBody(e.target)) {
-         return;
-      }
+	@HostListener('window:keydown', ['$event'])
+	onWindowKeyDown(e: KeyboardEvent) {
+		if (!this.isBody(e.target)) {
+			return;
+		}
 
-      let elem = this.el.nativeElement as HTMLInputElement;
-      elem.focus();
-   }
+		let elem = this.el.nativeElement as HTMLInputElement;
+		elem.focus();
+	}
 
-   isBody(target: any): boolean {
-      return target.tagName.toLocaleLowerCase() == 'body';
-   }
+	isBody(target: any): boolean {
+		return target.tagName.toLocaleLowerCase() == 'body';
+	}
 }

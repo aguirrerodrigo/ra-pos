@@ -10,15 +10,15 @@ import { OrderSearchComponent } from './components/order-search/order-search.com
 import { AutoTypeDirective } from './directives/auto-type.directive';
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      OrderComponent,
-      SearchComponent,
-      OrderSearchComponent,
-      AutoTypeDirective
-   ],
-   imports: [BrowserModule, AppRoutingModule, NgbModule],
-   providers: [],
-   bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		OrderComponent,
+		SearchComponent,
+		OrderSearchComponent,
+		AutoTypeDirective
+	],
+	imports: [BrowserModule, AppRoutingModule, NgbModule],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule {}

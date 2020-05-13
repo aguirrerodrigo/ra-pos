@@ -1,15 +1,15 @@
 <app-search
-   #search
-   [items]="searchItems"
-   (onSelect)="onSelect(search.selectedItem)"
+	#search
+	[items]="searchItems"
+	(onSelect)="onSelect(search.selectedItem)"
 >
-   <ng-template class="search-item" let-item>
-      <div class="float-left">
-         <div [innerHTML]="item.formattedText"></div>
-         <div class="small">{{ item.model.description }}</div>
-      </div>
-      <div class="float-right mt-2">
-         {{ item.model.price | currency: 'PH':'P ' }}
-      </div>
-   </ng-template>
+	<ng-template class="search-item" let-item>
+		<div class="float-left">
+			<div [innerHTML]="item.formattedText"></div>
+			<div class="small">{{ item.model.description }}</div>
+		</div>
+		<div class="float-right mt-2">
+			{{ item.model.price | currency: 'PH':'P ' }}
+		</div>
+	</ng-template>
 </app-search>

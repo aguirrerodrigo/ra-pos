@@ -1,5 +1,5 @@
 import { SearchMatch } from './search-match';
-import Conjunctions from '@root/assets/json/conjunctions.json';
+import Conjunctions from '@src/assets/json/conjunctions.json';
 
 export abstract class SearchStrategy {
 	protected static conjunctions = new Set<string>(Conjunctions);

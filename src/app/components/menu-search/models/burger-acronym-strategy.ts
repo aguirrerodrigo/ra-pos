@@ -1,16 +1,23 @@
-import { SearchStrategy } from './search-strategy';
+import { SearchStrategy } from '@app/components/search/models/search-strategy';
 
-export class AcronymStrategy extends SearchStrategy {
+export class BurgerAcronymStrategy extends SearchStrategy {
+	private burgerIndex = -1;
 	private index = 0;
 	private matchCount = 0;
 	private text = '';
 	private search = '';
 
 	match(text: string, search: string) {
+		this.burgerIndex = -1;
 		this.index = 0;
 		this.matchCount = 0;
 		this.text = text;
 		this.search = search;
+
+		this.nextBurgerIndex();
+		if (this.burgerIndex < 0) {
+			return false;
+		}
 
 		if (search[0] === text[0]) {
 			this.scanWordMatches();
@@ -30,6 +37,14 @@ export class AcronymStrategy extends SearchStrategy {
 					' ' + this.search[this.matchCount],
 					this.index
 				);
+
+				if (search[this.matchCount] === 'b' && this.burgerIndex > 0) {
+					if (this.index < 0 || this.burgerIndex <= this.index + 1) {
+						this.index = this.burgerIndex - 1;
+						this.nextBurgerIndex();
+					}
+				}
+
 				if (this.index < 0) {
 					return false;
 				}
@@ -43,6 +58,20 @@ export class AcronymStrategy extends SearchStrategy {
 			}
 		}
 		return true;
+	}
+
+	private nextBurgerIndex(): void {
+		if (this.burgerIndex >= this.text.length - 6) {
+			this.burgerIndex = -1;
+			return;
+		}
+
+		this.burgerIndex = this.text
+			.toLowerCase()
+			.indexOf('burger ', this.burgerIndex + 1);
+		if (this.burgerIndex < 0 && this.text.endsWith('burger')) {
+			this.burgerIndex = this.text.length - 6;
+		}
 	}
 
 	private checkFirstWordConjunction(): boolean {

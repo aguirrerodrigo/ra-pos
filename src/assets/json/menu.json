@@ -1,443 +1,443 @@
 [
-   {
-      "name": "Avocado Shake",
-      "description": "Avocado Shake (SEASONAL)",
-      "price": 35
-   },
-   {
-      "name": "Bacon Barbeque Cheeseburger",
-      "description": "Bacon barbeque cheeseburger",
-      "price": 45
-   },
-   {
-      "name": "Baked Chicken",
-      "description": "Baked chicken",
-      "price": 65
-   },
-   {
-      "name": "Baked Macaroni",
-      "description": "Baked macaroni",
-      "price": 50
-   },
-   {
-      "name": "Bihon",
-      "description": "Pancit bihon",
-      "price": 130
-   },
-   {
-      "name": "Bihon Solo",
-      "description": "Single serve pancit bihon",
-      "price": 40
-   },
-   {
-      "name": "Bottled Water",
-      "description": "Nature's Spring bottled water",
-      "price": 10
-   },
-   {
-      "name": "Brewed Coffee",
-      "description": "Brewed coffee",
-      "price": 60
-   },
-   {
-      "name": "Buffalo Chicken",
-      "description": "Fried chicken in buffalo sauce",
-      "price": 70
-   },
-   {
-      "name": "Buffalo Pork Tenderloin",
-      "description": "Pork tenderloin in buffalo sauce",
-      "price": 70
-   },
-   {
-      "name": "Buko Shake",
-      "description": "Buko shake (SEASONAL)",
-      "price": 35
-   },
-   {
-      "name": "Bulalo",
-      "description": "Bulalo",
-      "price": 80
-   },
-   {
-      "name": "Burger Steak",
-      "description": "Burger steak",
-      "price": 50
-   },
-   {
-      "name": "Calamansi Juice",
-      "description": "Calamansi juice",
-      "price": 30
-   },
-   {
-      "name": "Caldereta",
-      "description": "Caledereta",
-      "price": 80
-   },
-   {
-      "name": "Calzone",
-      "description": "12\" folded pizza",
-      "price": 235
-   },
-   {
-      "name": "Carbonara",
-      "description": "Carbonara",
-      "price": 40
-   },
-   {
-      "name": "Carbonara Pizza",
-      "description": "8\" pizza with carbonara sauce",
-      "price": 125
-   },
-   {
-      "name": "Cheeseburger",
-      "description": "Cheeseburger",
-      "price": 35
-   },
-   {
-      "name": "Cheesy Dog",
-      "description": "Cheesy dog",
-      "price": 40
-   },
-   {
-      "name": "Chick 'n Cheese",
-      "description": "Fried chicken in cheese sauce",
-      "price": 70
-   },
-   {
-      "name": "Chicken Barbeque",
-      "description": "Chicken barbeque",
-      "price": 70
-   },
-   {
-      "name": "Chicken Barbeque Pizza",
-      "description": "12\" thin crust pizza with chicken barbeque bits and sauce",
-      "price": 250
-   },
-   {
-      "name": "Chicken Burger",
-      "description": "Chicken Burger",
-      "price": 40
-   },
-   {
-      "name": "Chicken Fillet",
-      "description": "Crispy chicken fillet with mushroom sauce and corn on the side",
-      "price": 70
-   },
-   {
-      "name": "Chicken Inasal",
-      "description": "Chicken inasal",
-      "price": 70
-   },
-   {
-      "name": "Chicken Teriyaki",
-      "description": "Chicken teriyaki",
-      "price": 80
-   },
-   {
-      "name": "Chili Cheese Dog",
-      "description": "Cheesy dog with chili on top",
-      "price": 50
-   },
-   {
-      "name": "Cucumber Iced Tea - Regular",
-      "description": "12oz cucumber iced tea",
-      "price": 20
-   },
-   {
-      "name": "Cucumber Iced Tea - Large",
-      "description": "16oz cucumber iced tea",
-      "price": 30
-   },
-   {
-      "name": "Deboned Bangus",
-      "description": "Deep fried deboned bangus with vinegar",
-      "price": 90
-   },
-   {
-      "name": "Dinner-Roll Pizza",
-      "description": "Pull-apart pizza",
-      "price": 185
-   },
-   {
-      "name": "Fish Fillet",
-      "description": "Fish fillet",
-      "price": 60
-   },
-   {
-      "name": "French Fries",
-      "description": "French fries",
-      "price": 30
-   },
-   {
-      "name": "Fried Chicken",
-      "description": "Fried chicken",
-      "price": 65
-   },
-   {
-      "name": "Fruit Salad",
-      "description": "Fruit salad",
-      "price": 30
-   },
-   {
-      "name": "Gyudon",
-      "description": "Beef rice bowl, served w/ iced tea",
-      "price": 145
-   },
-   {
-      "name": "Halo-halo",
-      "description": "Halo-halo",
-      "price": 45
-   },
-   {
-      "name": "Ham and Pineapple Pizza - Small",
-      "description": "7\" ham & pineapple pizza",
-      "price": 45
-   },
-   {
-      "name": "Ham and Pineapple Pizza - Medium",
-      "description": "8\" ham and pineapple pizza",
-      "price": 70
-   },
-   {
-      "name": "Ham and Pineapple Pizza - Large",
-      "description": "9\" ham and pineapple pizza",
-      "price": 70
-   },
-   {
-      "name": "Hamburger",
-      "description": "Hamburger",
-      "price": 30
-   },
-   {
-      "name": "Hungarian Sausage Pizza",
-      "description": "8\" hungarian sausage pizza",
-      "price": 100
-   },
-   {
-      "name": "Iced Tea - Large",
-      "description": "16oz Nestea iced tea",
-      "price": 25
-   },
-   {
-      "name": "Iced Tea - Regular",
-      "description": "12oz Nestea iced tea",
-      "price": 18
-   },
-   {
-      "name": "Instant Coffee",
-      "description": "Instant coffee",
-      "price": 35
-   },
-   {
-      "name": "Italian Pizza",
-      "description": "12\" Italian style thin crust pizza with choice of cheese tinapa, or meat toppings",
-      "price": 250
-   },
-   {
-      "name": "Japanese Rice",
-      "description": "Japanese rice",
-      "price": 20
-   },
-   {
-      "name": "Juice - Regular",
-      "description": "12oz pineapple or orange juice",
-      "price": 20
-   },
-   {
-      "name": "Juice - Large",
-      "description": "16oz pineapple or orange juice",
-      "price": 30
-   },
-   {
-      "name": "Lomi",
-      "description": "Lomi, additional P5.00 for take-out",
-      "price": 35
-   },
-   {
-      "name": "Lumpiang Shanghai",
-      "description": "Lumpiang shanghai",
-      "price": 45
-   },
-   {
-      "name": "Mac 'n Cheese",
-      "description": "Mac 'n cheese with bacon bits",
-      "price": 30
-   },
-   {
-      "name": "Maiz Shake",
-      "description": "Maiz shake",
-      "price": 30
-   },
-   {
-      "name": "Maiz con Hielo",
-      "description": "main con hielo",
-      "price": 35
-   },
-   {
-      "name": "Mango Shake",
-      "description": "Mango shake",
-      "price": 35
-   },
-   {
-      "name": "Melon Shake",
-      "description": "Melon shake (SEASONAL)",
-      "price": 35
-   },
-   {
-      "name": "Mezza Luna Pizza",
-      "description": "Half chicken barbeque pizza, half calzone",
-      "price": 270
-   },
-   {
-      "name": "Mozzarella Pizza - Medium",
-      "description": "8\" pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
-      "price": 95
-   },
-   {
-      "name": "Mozzarella Pizza - Large",
-      "description": "9\" pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
-      "price": 110
-   },
-   {
-      "name": "Mozzarella Pizza - Thin",
-      "description": "8\" thin crust pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
-      "price": 140
-   },
+	{
+		"name": "Avocado Shake",
+		"description": "Avocado Shake (SEASONAL)",
+		"price": 35
+	},
+	{
+		"name": "Bacon Barbeque Cheeseburger",
+		"description": "Bacon barbeque cheeseburger",
+		"price": 45
+	},
+	{
+		"name": "Baked Chicken",
+		"description": "Baked chicken",
+		"price": 65
+	},
+	{
+		"name": "Baked Macaroni",
+		"description": "Baked macaroni",
+		"price": 50
+	},
+	{
+		"name": "Bihon",
+		"description": "Pancit bihon",
+		"price": 130
+	},
+	{
+		"name": "Bihon Solo",
+		"description": "Single serve pancit bihon",
+		"price": 40
+	},
+	{
+		"name": "Bottled Water",
+		"description": "Nature's Spring bottled water",
+		"price": 10
+	},
+	{
+		"name": "Brewed Coffee",
+		"description": "Brewed coffee",
+		"price": 60
+	},
+	{
+		"name": "Buffalo Chicken",
+		"description": "Fried chicken in buffalo sauce",
+		"price": 70
+	},
+	{
+		"name": "Buffalo Pork Tenderloin",
+		"description": "Pork tenderloin in buffalo sauce",
+		"price": 70
+	},
+	{
+		"name": "Buko Shake",
+		"description": "Buko shake (SEASONAL)",
+		"price": 35
+	},
+	{
+		"name": "Bulalo",
+		"description": "Bulalo",
+		"price": 80
+	},
+	{
+		"name": "Burger Steak",
+		"description": "Burger steak",
+		"price": 50
+	},
+	{
+		"name": "Calamansi Juice",
+		"description": "Calamansi juice",
+		"price": 30
+	},
+	{
+		"name": "Caldereta",
+		"description": "Caledereta",
+		"price": 80
+	},
+	{
+		"name": "Calzone",
+		"description": "12\" folded pizza",
+		"price": 235
+	},
+	{
+		"name": "Carbonara",
+		"description": "Carbonara",
+		"price": 40
+	},
+	{
+		"name": "Carbonara Pizza",
+		"description": "8\" pizza with carbonara sauce",
+		"price": 125
+	},
+	{
+		"name": "Cheeseburger",
+		"description": "Cheeseburger",
+		"price": 35
+	},
+	{
+		"name": "Cheesy Dog",
+		"description": "Cheesy dog",
+		"price": 40
+	},
+	{
+		"name": "Chick 'n Cheese",
+		"description": "Fried chicken in cheese sauce",
+		"price": 70
+	},
+	{
+		"name": "Chicken Barbeque",
+		"description": "Chicken barbeque",
+		"price": 70
+	},
+	{
+		"name": "Chicken Barbeque Pizza",
+		"description": "12\" thin crust pizza with chicken barbeque bits and sauce",
+		"price": 250
+	},
+	{
+		"name": "Chicken Burger",
+		"description": "Chicken Burger",
+		"price": 40
+	},
+	{
+		"name": "Chicken Fillet",
+		"description": "Crispy chicken fillet with mushroom sauce and corn on the side",
+		"price": 70
+	},
+	{
+		"name": "Chicken Inasal",
+		"description": "Chicken inasal",
+		"price": 70
+	},
+	{
+		"name": "Chicken Teriyaki",
+		"description": "Chicken teriyaki",
+		"price": 80
+	},
+	{
+		"name": "Chili Cheese Dog",
+		"description": "Cheesy dog with chili on top",
+		"price": 50
+	},
+	{
+		"name": "Cucumber Iced Tea - Regular",
+		"description": "12oz cucumber iced tea",
+		"price": 20
+	},
+	{
+		"name": "Cucumber Iced Tea - Large",
+		"description": "16oz cucumber iced tea",
+		"price": 30
+	},
+	{
+		"name": "Deboned Bangus",
+		"description": "Deep fried deboned bangus with vinegar",
+		"price": 90
+	},
+	{
+		"name": "Dinner-Roll Pizza",
+		"description": "Pull-apart pizza",
+		"price": 185
+	},
+	{
+		"name": "Fish Fillet",
+		"description": "Fish fillet",
+		"price": 60
+	},
+	{
+		"name": "French Fries",
+		"description": "French fries",
+		"price": 30
+	},
+	{
+		"name": "Fried Chicken",
+		"description": "Fried chicken",
+		"price": 65
+	},
+	{
+		"name": "Fruit Salad",
+		"description": "Fruit salad",
+		"price": 30
+	},
+	{
+		"name": "Gyudon",
+		"description": "Beef rice bowl, served w/ iced tea",
+		"price": 145
+	},
+	{
+		"name": "Halo-halo",
+		"description": "Halo-halo",
+		"price": 45
+	},
+	{
+		"name": "Ham and Pineapple Pizza - Small",
+		"description": "7\" ham & pineapple pizza",
+		"price": 45
+	},
+	{
+		"name": "Ham and Pineapple Pizza - Medium",
+		"description": "8\" ham and pineapple pizza",
+		"price": 70
+	},
+	{
+		"name": "Ham and Pineapple Pizza - Large",
+		"description": "9\" ham and pineapple pizza",
+		"price": 70
+	},
+	{
+		"name": "Hamburger",
+		"description": "Hamburger",
+		"price": 30
+	},
+	{
+		"name": "Hungarian Sausage Pizza",
+		"description": "8\" hungarian sausage pizza",
+		"price": 100
+	},
+	{
+		"name": "Iced Tea - Large",
+		"description": "16oz Nestea iced tea",
+		"price": 25
+	},
+	{
+		"name": "Iced Tea - Regular",
+		"description": "12oz Nestea iced tea",
+		"price": 18
+	},
+	{
+		"name": "Instant Coffee",
+		"description": "Instant coffee",
+		"price": 35
+	},
+	{
+		"name": "Italian Pizza",
+		"description": "12\" Italian style thin crust pizza with choice of cheese tinapa, or meat toppings",
+		"price": 250
+	},
+	{
+		"name": "Japanese Rice",
+		"description": "Japanese rice",
+		"price": 20
+	},
+	{
+		"name": "Juice - Regular",
+		"description": "12oz pineapple or orange juice",
+		"price": 20
+	},
+	{
+		"name": "Juice - Large",
+		"description": "16oz pineapple or orange juice",
+		"price": 30
+	},
+	{
+		"name": "Lomi",
+		"description": "Lomi, additional P5.00 for take-out",
+		"price": 35
+	},
+	{
+		"name": "Lumpiang Shanghai",
+		"description": "Lumpiang shanghai",
+		"price": 45
+	},
+	{
+		"name": "Mac 'n Cheese",
+		"description": "Mac 'n cheese with bacon bits",
+		"price": 30
+	},
+	{
+		"name": "Maiz Shake",
+		"description": "Maiz shake",
+		"price": 30
+	},
+	{
+		"name": "Maiz con Hielo",
+		"description": "main con hielo",
+		"price": 35
+	},
+	{
+		"name": "Mango Shake",
+		"description": "Mango shake",
+		"price": 35
+	},
+	{
+		"name": "Melon Shake",
+		"description": "Melon shake (SEASONAL)",
+		"price": 35
+	},
+	{
+		"name": "Mezza Luna Pizza",
+		"description": "Half chicken barbeque pizza, half calzone",
+		"price": 270
+	},
+	{
+		"name": "Mozzarella Pizza - Medium",
+		"description": "8\" pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
+		"price": 95
+	},
+	{
+		"name": "Mozzarella Pizza - Large",
+		"description": "9\" pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
+		"price": 110
+	},
+	{
+		"name": "Mozzarella Pizza - Thin",
+		"description": "8\" thin crust pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
+		"price": 140
+	},
 
-   {
-      "name": "Mozzarella Pizza - Pan",
-      "description": "8\" thick and fluffy pan pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
-      "price": 160
-   },
-   {
-      "name": "Palabok",
-      "description": "Palabok",
-      "price": 45
-   },
-   {
-      "name": "Palabok Pizza",
-      "description": "12\" thin crust pizza with palabok sauce and toppings",
-      "price": 250
-   },
-   {
-      "name": "Pepperoni Pizza",
-      "description": "12\" thin crust pepperoni pizza",
-      "price": 240
-   },
-   {
-      "name": "Pineapple Shake",
-      "description": "Pineapple shake",
-      "price": 35
-   },
-   {
-      "name": "Plain Rice",
-      "description": "Plain rice",
-      "price": 12
-   },
-   {
-      "name": "Pork Barbeque 1-Stick",
-      "description": "1 stick pork barbeque",
-      "price": 35
-   },
-   {
-      "name": "Pork Barbeque 2-Sticks",
-      "description": "2 stick pork barbeque",
-      "price": 60
-   },
-   {
-      "name": "Pork Chop",
-      "description": "Pork chop",
-      "price": 65
-   },
-   {
-      "name": "Pork Sisig",
-      "description": "Pork sisig",
-      "price": 65
-   },
-   {
-      "name": "Pork Tenderloin",
-      "description": "Pork tenderloin",
-      "price": 65
-   },
-   {
-      "name": "Sisig Bangus",
-      "description": "Sisig bangus",
-      "price": 70
-   },
-   {
-      "name": "Sisig Bowl",
-      "description": "Pork sisig rice bowl, served w/ iced tea",
-      "price": 125
-   },
-   {
-      "name": "Sisig Pizza",
-      "description": "8\" sisig pizza",
-      "price": 100
-   },
-   {
-      "name": "Sizzling Chicken",
-      "description": "Fried chicken on a sizzling plate",
-      "price": 70
-   },
-   {
-      "name": "Softdrinks - Regular",
-      "description": "12oz Coke, Royal, or Sprite",
-      "price": 15
-   },
-   {
-      "name": "Softdrinks - Large",
-      "description": "16oz Coke, Royal, or Sprite",
-      "price": 18
-   },
-   {
-      "name": "Soy Garlic Chicken",
-      "description": "Soy garlic glazed fried chicken",
-      "price": 80
-   },
-   {
-      "name": "Spaghetti",
-      "description": "Spaghetti",
-      "price": 40
-   },
-   {
-      "name": "Spaghetti with Chicken",
-      "description": "Spaghetti with chicken, served with softdrinks",
-      "price": 60
-   },
-   {
-      "name": "Tonkatsu",
-      "description": "Tonkatsu",
-      "price": 90
-   },
-   {
-      "name": "Tonkatsudon",
-      "description": "Pork katsu rice bowl, served w/ iced tea",
-      "price": 135
-   },
-   {
-      "name": "Tori Teriyakidon",
-      "description": "Chicken teriyaki rice bowl, served w/ iced tea",
-      "price": 145
-   },
-   {
-      "name": "Torikatsudon",
-      "description": "Chicken katsu rice bowl, served w/ iced tea",
-      "price": 135
-   },
-   {
-      "name": "Tuna Bunwich",
-      "description": "Tuna bunwich",
-      "price": 30
-   },
-   {
-      "name": "Ube Macapuno",
-      "description": "Ube macapuno",
-      "price": 50
-   },
-   {
-      "name": "Ube Shake",
-      "description": "Ube shake (SEASONAL)",
-      "price": 40
-   }
+	{
+		"name": "Mozzarella Pizza - Pan",
+		"description": "8\" thick and fluffy pan pizza with choice of ham & pineapple, beef & mushroom, or pepperoni with mushroom toppings",
+		"price": 160
+	},
+	{
+		"name": "Palabok",
+		"description": "Palabok",
+		"price": 45
+	},
+	{
+		"name": "Palabok Pizza",
+		"description": "12\" thin crust pizza with palabok sauce and toppings",
+		"price": 250
+	},
+	{
+		"name": "Pepperoni Pizza",
+		"description": "12\" thin crust pepperoni pizza",
+		"price": 240
+	},
+	{
+		"name": "Pineapple Shake",
+		"description": "Pineapple shake",
+		"price": 35
+	},
+	{
+		"name": "Plain Rice",
+		"description": "Plain rice",
+		"price": 12
+	},
+	{
+		"name": "Pork Barbeque 1-Stick",
+		"description": "1 stick pork barbeque",
+		"price": 35
+	},
+	{
+		"name": "Pork Barbeque 2-Sticks",
+		"description": "2 stick pork barbeque",
+		"price": 60
+	},
+	{
+		"name": "Pork Chop",
+		"description": "Pork chop",
+		"price": 65
+	},
+	{
+		"name": "Pork Sisig",
+		"description": "Pork sisig",
+		"price": 65
+	},
+	{
+		"name": "Pork Tenderloin",
+		"description": "Pork tenderloin",
+		"price": 65
+	},
+	{
+		"name": "Sisig Bangus",
+		"description": "Sisig bangus",
+		"price": 70
+	},
+	{
+		"name": "Sisig Bowl",
+		"description": "Pork sisig rice bowl, served w/ iced tea",
+		"price": 125
+	},
+	{
+		"name": "Sisig Pizza",
+		"description": "8\" sisig pizza",
+		"price": 100
+	},
+	{
+		"name": "Sizzling Chicken",
+		"description": "Fried chicken on a sizzling plate",
+		"price": 70
+	},
+	{
+		"name": "Softdrinks - Regular",
+		"description": "12oz Coke, Royal, or Sprite",
+		"price": 15
+	},
+	{
+		"name": "Softdrinks - Large",
+		"description": "16oz Coke, Royal, or Sprite",
+		"price": 18
+	},
+	{
+		"name": "Soy Garlic Chicken",
+		"description": "Soy garlic glazed fried chicken",
+		"price": 80
+	},
+	{
+		"name": "Spaghetti",
+		"description": "Spaghetti",
+		"price": 40
+	},
+	{
+		"name": "Spaghetti with Chicken",
+		"description": "Spaghetti with chicken, served with softdrinks",
+		"price": 60
+	},
+	{
+		"name": "Tonkatsu",
+		"description": "Tonkatsu",
+		"price": 90
+	},
+	{
+		"name": "Tonkatsudon",
+		"description": "Pork katsu rice bowl, served w/ iced tea",
+		"price": 135
+	},
+	{
+		"name": "Tori Teriyakidon",
+		"description": "Chicken teriyaki rice bowl, served w/ iced tea",
+		"price": 145
+	},
+	{
+		"name": "Torikatsudon",
+		"description": "Chicken katsu rice bowl, served w/ iced tea",
+		"price": 135
+	},
+	{
+		"name": "Tuna Bunwich",
+		"description": "Tuna bunwich",
+		"price": 30
+	},
+	{
+		"name": "Ube Macapuno",
+		"description": "Ube macapuno",
+		"price": 50
+	},
+	{
+		"name": "Ube Shake",
+		"description": "Ube shake (SEASONAL)",
+		"price": 40
+	}
 ]

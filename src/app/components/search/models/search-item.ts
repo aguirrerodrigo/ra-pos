@@ -1,5 +1,5 @@
 import { SearchStrategy } from './search-strategy';
-import { SearchResult } from './search-result';
+import { SearchMatch } from './search-match';
 
 export class SearchItem {
 	private lowerSearchText: string;
@@ -10,25 +10,26 @@ export class SearchItem {
 	}
 
 	match(s: string, strategy: SearchStrategy, caseSensitive = false): boolean {
-		let result: SearchResult;
+		let found = false;
 
+		strategy.matches = [];
 		if (!caseSensitive) {
-			result = strategy.match(this.lowerSearchText, s.toLowerCase());
+			found = strategy.match(this.lowerSearchText, s.toLowerCase());
 		} else {
-			result = strategy.match(this.searchText, s);
+			found = strategy.match(this.searchText, s);
 		}
 
-		if (result.success) {
-			this.formattedText = this.formatText(result);
+		if (found) {
+			this.formattedText = this.formatText(strategy.matches);
 		}
 
-		return result.success;
+		return found;
 	}
 
-	private formatText(searchResult: SearchResult): string {
+	private formatText(matches: SearchMatch[]): string {
 		let result = '';
 		let index = 0;
-		for (const match of searchResult.matches) {
+		for (const match of matches) {
 			if (match.startIndex > index) {
 				result += this.searchText.substr(index, match.startIndex - index);
 			}

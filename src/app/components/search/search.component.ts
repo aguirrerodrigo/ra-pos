@@ -9,9 +9,7 @@ import {
 import { SearchItem } from './models/search-item';
 import { TextStartsStrategy } from './models/text-starts-strategy';
 import { WordStartsStrategy } from './models/word-starts-strategy';
-import { BurgerWordStrategy } from './models/burger-word-strategy';
 import { AcronymStrategy } from './models/acronym-strategy';
-import { BurgerAcronymStrategy } from './models/burger-acronym-strategy';
 
 @Component({
 	selector: 'app-search',
@@ -28,14 +26,13 @@ export class SearchComponent {
 	@Input() searchStrategies = [
 		new TextStartsStrategy(),
 		new WordStartsStrategy(),
-		new BurgerWordStrategy(),
-		new AcronymStrategy(),
-		new BurgerAcronymStrategy()
+		new AcronymStrategy()
 	];
+	selectedItem: SearchItem;
+
 	@Input() caseSensitive = false;
 	@Input() items: SearchItem[] = [];
 
-	@Output() selectedItem: SearchItem;
 	@Output() selectedItemChange = new EventEmitter();
 
 	search(s: string) {
@@ -46,9 +43,7 @@ export class SearchComponent {
 		if (s) {
 			for (const strategy of this.searchStrategies) {
 				for (const item of this.items) {
-					if (this.buffer.has(item)) {
-						continue;
-					}
+					if (this.buffer.has(item)) continue;
 
 					if (item.match(s, strategy, this.caseSensitive)) {
 						this.buffer.add(item);

@@ -1,14 +1,12 @@
 import { SearchStrategy } from './search-strategy';
-import { SearchResult } from './search-result';
 
-export class TextStartsStrategy implements SearchStrategy {
+export class TextStartsStrategy extends SearchStrategy {
 	match(text: string, search: string) {
-		const result = new SearchResult();
-
 		if (text.startsWith(search)) {
-			result.addMatch(0, search.length);
+			super.addMatch(0, search.length);
+			return true;
 		}
 
-		return result;
+		return false;
 	}
 }

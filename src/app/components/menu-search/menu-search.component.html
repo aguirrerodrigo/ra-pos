@@ -1,6 +1,7 @@
 <app-search
 	#search
 	[items]="searchItems"
+	[searchStrategies]="searchStrategies"
 	(selectedItemChange)="onSelect(search.selectedItem)"
 >
 	<ng-template class="search-item" let-item>

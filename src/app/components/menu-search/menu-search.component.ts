@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchItem } from '@app/components/search/models/search-item';
 import { MenuService } from '@app/services/menu.service';
+import { SearchStrategy } from '@app/components/search/models/search-strategy';
+import { TextStartsStrategy } from '@app/components/search/models/text-starts-strategy';
+import { WordStartsStrategy } from '@app/components/search/models/word-starts-strategy';
+import { AcronymStrategy } from '@app/components/search/models/acronym-strategy';
+import { BurgerWordStrategy } from './models/burger-word-strategy';
+import { BurgerAcronymStrategy } from './models/burger-acronym-strategy';
 
 @Component({
 	selector: 'app-menu-search',
@@ -9,6 +15,13 @@ import { MenuService } from '@app/services/menu.service';
 })
 export class MenuSearchComponent {
 	searchItems: SearchItem[];
+	searchStrategies: SearchStrategy[] = [
+		new TextStartsStrategy(),
+		new WordStartsStrategy(),
+		new BurgerWordStrategy(),
+		new AcronymStrategy(),
+		new BurgerAcronymStrategy()
+	];
 
 	constructor(private menuService: MenuService) {
 		this.searchItems = this.getSearchItems();

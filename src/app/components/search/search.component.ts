@@ -36,7 +36,7 @@ export class SearchComponent {
 	@Input() items: SearchItem[] = [];
 
 	@Output() selectedItem: SearchItem;
-	@Output() onSelect = new EventEmitter();
+	@Output() selectedItemChange = new EventEmitter();
 
 	search(s: string) {
 		if (!this.items) return;
@@ -44,8 +44,8 @@ export class SearchComponent {
 
 		this.buffer.clear();
 		if (s) {
-			for (let strategy of this.searchStrategies) {
-				for (let item of this.items) {
+			for (const strategy of this.searchStrategies) {
+				for (const item of this.items) {
 					if (this.buffer.has(item)) {
 						continue;
 					}
@@ -74,10 +74,10 @@ export class SearchComponent {
 	}
 
 	onEnterKey() {
-		if (!this.result || this.result.length == 0) return;
+		if (!this.result || this.result.length === 0) return;
 
 		this.selectedItem = this.result[this.selectedIndex];
-		this.onSelect.emit();
+		this.selectedItemChange.emit();
 	}
 
 	onEscKey(e: KeyboardEvent) {
@@ -88,6 +88,6 @@ export class SearchComponent {
 
 	onItemClick(searchItem: SearchItem): void {
 		this.selectedItem = searchItem;
-		this.onSelect.emit();
+		this.selectedItemChange.emit();
 	}
 }

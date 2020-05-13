@@ -12,11 +12,11 @@ export class AutoTypeDirective {
 			return;
 		}
 
-		let elem = this.el.nativeElement as HTMLInputElement;
+		const elem = this.el.nativeElement as HTMLInputElement;
 		elem.focus();
 	}
 
 	isBody(target: any): boolean {
-		return target.tagName.toLocaleLowerCase() == 'body';
+		return target.tagName.toLocaleLowerCase() === 'body';
 	}
 }

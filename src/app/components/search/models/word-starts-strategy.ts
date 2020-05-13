@@ -7,7 +7,7 @@ export class WordStartsStrategy implements SearchStrategy {
 	private static conjunctions = new Set<string>(Conjunctions);
 
 	match(text: string, search: string) {
-		let result = new SearchResult();
+		const result = new SearchResult();
 
 		if (text.startsWith(search)) {
 			result.addMatch(0, search.length);
@@ -16,7 +16,7 @@ export class WordStartsStrategy implements SearchStrategy {
 			while (index > 0) {
 				index++;
 
-				let word = this.getFirstWord(text, index);
+				const word = this.getFirstWord(text, index);
 				if (!WordStartsStrategy.conjunctions.has(word)) {
 					result.addMatch(index, search.length);
 					break;
@@ -30,7 +30,7 @@ export class WordStartsStrategy implements SearchStrategy {
 	}
 
 	getFirstWord(text: string, index: number): string {
-		let spaceIndex = text.indexOf(' ', index);
+		const spaceIndex = text.indexOf(' ', index);
 		if (spaceIndex < 0) {
 			return text.substr(index, text.length - index);
 		} else {

@@ -28,7 +28,7 @@ export class SearchItem {
 	private formatText(searchResult: SearchResult): string {
 		let result = '';
 		let index = 0;
-		for (let match of searchResult.matches) {
+		for (const match of searchResult.matches) {
 			if (match.startIndex > index) {
 				result += this.searchText.substr(index, match.startIndex - index);
 			}

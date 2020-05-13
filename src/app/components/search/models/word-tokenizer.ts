@@ -7,7 +7,7 @@ export class WordTokenizer {
 	next(): boolean {
 		this.index = this.index + this.word.length;
 		for (let i = this.index; i < this.s.length; i++) {
-			if (this.s[i] != ' ') {
+			if (this.s[i] !== ' ') {
 				this.index = i;
 
 				let spaceIndex = this.s.indexOf(' ', this.index);

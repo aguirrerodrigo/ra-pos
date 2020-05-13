@@ -3,8 +3,8 @@ import { SearchResult } from './search-result';
 
 export class BurgerAcronymStrategy implements SearchStrategy {
 	match(text: string, search: string): SearchResult {
-		let failed = new SearchResult();
-		let result = new SearchResult();
+		const failed = new SearchResult();
+		const result = new SearchResult();
 
 		let burgerIndex = text.toLowerCase().indexOf('burger ');
 		if (burgerIndex < 0 && text.endsWith('burger')) {
@@ -15,14 +15,14 @@ export class BurgerAcronymStrategy implements SearchStrategy {
 
 		let index = 0;
 		let matchCount = 0;
-		if (search[0] == text[0]) {
+		if (search[0] === text[0]) {
 			matchCount++;
 			index++;
 
 			while (
 				matchCount < search.length &&
 				index < text.length &&
-				search[matchCount] == text[index]
+				search[matchCount] === text[index]
 			) {
 				matchCount++;
 				index++;
@@ -40,9 +40,9 @@ export class BurgerAcronymStrategy implements SearchStrategy {
 
 				matchCount++;
 			} else {
-				let nextWordIndex = text.indexOf(' ' + search[matchCount], index);
+				const nextWordIndex = text.indexOf(' ' + search[matchCount], index);
 
-				if (search[matchCount] == 'b') {
+				if (search[matchCount] === 'b') {
 					if (index > burgerIndex) {
 						burgerIndex = text.toLowerCase().indexOf('burger ', index);
 						if (burgerIndex < 0 && text.endsWith('burger')) {
@@ -70,11 +70,11 @@ export class BurgerAcronymStrategy implements SearchStrategy {
 				}
 
 				index++;
-				let startIndex = index;
+				const startIndex = index;
 				while (
 					matchCount < search.length &&
 					index < text.length &&
-					search[matchCount] == text[index]
+					search[matchCount] === text[index]
 				) {
 					matchCount++;
 					index++;

@@ -15,10 +15,10 @@ export class MenuSearchComponent {
 	}
 
 	private getSearchItems(): SearchItem[] {
-		let result: SearchItem[] = [];
+		const result: SearchItem[] = [];
 
-		var menu = this.menuService.getMenu();
-		for (let menuItem of menu) {
+		const menu = this.menuService.getMenu();
+		for (const menuItem of menu) {
 			result.push(new SearchItem(menuItem.name, menuItem));
 		}
 

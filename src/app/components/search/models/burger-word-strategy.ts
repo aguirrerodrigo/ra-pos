@@ -3,7 +3,7 @@ import { SearchResult } from './search-result';
 
 export class BurgerWordStrategy implements SearchStrategy {
 	match(text: string, search: string) {
-		let result = new SearchResult();
+		const result = new SearchResult();
 
 		if ('burger'.startsWith(search.toLowerCase())) {
 			let burgerIndex = text.toLowerCase().indexOf('burger ');
@@ -12,8 +12,8 @@ export class BurgerWordStrategy implements SearchStrategy {
 			}
 
 			if (burgerIndex >= 0) {
-				let index = text.indexOf(search);
-				if (burgerIndex == index) {
+				const index = text.indexOf(search);
+				if (burgerIndex === index) {
 					result.addMatch(index, search.length);
 				}
 			}

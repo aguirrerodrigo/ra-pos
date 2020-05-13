@@ -5,7 +5,7 @@ import { MenuService } from '@app/services/menu.service';
 @Component({
 	selector: 'app-menu-search',
 	templateUrl: './menu-search.component.html',
-	styleUrls: ['./menu-search.component.css']
+	styleUrls: ['./menu-search.component.scss']
 })
 export class MenuSearchComponent {
 	searchItems: SearchItem[];

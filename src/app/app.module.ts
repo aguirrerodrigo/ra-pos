@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { OrderComponent } from './components/order/order.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/search/search.component';
-import { OrderSearchComponent } from './components/order-search/order-search.component';
+import { MenuSearchComponent } from './components/menu-search/menu-search.component';
 import { AutoTypeDirective } from './directives/auto-type.directive';
 
 @NgModule({
@@ -14,7 +14,7 @@ import { AutoTypeDirective } from './directives/auto-type.directive';
 		AppComponent,
 		OrderComponent,
 		SearchComponent,
-		OrderSearchComponent,
+		MenuSearchComponent,
 		AutoTypeDirective
 	],
 	imports: [BrowserModule, AppRoutingModule, NgbModule],

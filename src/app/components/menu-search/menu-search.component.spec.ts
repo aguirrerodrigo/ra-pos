@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrderSearchComponent } from './order-search.component';
+import { MenuSearchComponent } from './menu-search.component';
 
 describe('OrderSearchComponent', () => {
-	let component: OrderSearchComponent;
-	let fixture: ComponentFixture<OrderSearchComponent>;
+	let component: MenuSearchComponent;
+	let fixture: ComponentFixture<MenuSearchComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [OrderSearchComponent]
+			declarations: [MenuSearchComponent]
 		}).compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(OrderSearchComponent);
+		fixture = TestBed.createComponent(MenuSearchComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

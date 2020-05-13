@@ -3,11 +3,11 @@ import { SearchItem } from '@app/components/search/models/search-item';
 import { MenuService } from '@app/services/menu.service';
 
 @Component({
-	selector: 'app-order-search',
-	templateUrl: './order-search.component.html',
-	styleUrls: ['./order-search.component.css']
+	selector: 'app-menu-search',
+	templateUrl: './menu-search.component.html',
+	styleUrls: ['./menu-search.component.css']
 })
-export class OrderSearchComponent {
+export class MenuSearchComponent {
 	searchItems: SearchItem[];
 
 	constructor(private menuService: MenuService) {

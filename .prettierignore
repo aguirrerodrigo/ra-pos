@@ -1,6 +1,2 @@
 /.git
-/e2e
 /node_modules
-/src/main.ts
-/src/polyfills.ts
-/src/test.ts

@@ -29,7 +29,7 @@ export class SearchComponent {
 		new AcronymStrategy()
 	];
 	selectedItem: SearchItem;
-
+	@Input() placeholder = 'Search';
 	@Input() caseSensitive = false;
 	@Input() items: SearchItem[] = [];
 

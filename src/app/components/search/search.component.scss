@@ -1,6 +1,4 @@
-.list-group-item-action {
-	cursor: pointer;
-}
+@import '~bootstrap/scss/bootstrap';
 
 .search-container {
 	width: 100%;
@@ -8,7 +6,26 @@
 	height: 40px;
 }
 
-.search-absolute {
+.search-container-absolute {
 	position: absolute;
+	z-index: 1000;
 	width: calc(100% - 30px);
+}
+
+.search {
+	@extend .form-control;
+}
+
+.list {
+	@extend .list-group, .mt-2;
+	z-index: 1000;
+}
+
+.item {
+	@extend .list-group-item, .list-group-item-action;
+	cursor: pointer;
+}
+
+.selected {
+	@extend .list-group-item-primary;
 }

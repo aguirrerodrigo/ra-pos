@@ -1,10 +1,13 @@
 <div>
-	<div class="container-fluid">
-		<h1>
-			{{ title }}<span class="version">&nbsp;v{{ version }}</span>
-		</h1>
+	<nav>
+		<h2>
+			{{ title }}
+		</h2>
+		<span class="version">v{{ version }}</span>
+	</nav>
+	<div class="app-container">
 		<app-menu-search></app-menu-search>
-		<!-- <app-order></app-order> -->
+		<app-order></app-order>
 	</div>
+	<router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

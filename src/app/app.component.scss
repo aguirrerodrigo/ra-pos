@@ -1,3 +1,14 @@
+@import '~bootstrap/scss/bootstrap';
+
+nav {
+	@extend .navbar, .navbar-dark, .bg-dark;
+	color: white;
+}
+
+.app-container {
+	@extend .container-fluid;
+}
+
 .version {
 	font-size: small;
 	color: #cccccc;

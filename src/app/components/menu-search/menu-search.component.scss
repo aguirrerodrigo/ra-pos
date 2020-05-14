@@ -1,0 +1,13 @@
+@import '~bootstrap/scss/bootstrap';
+
+.title {
+	@extend .float-left;
+}
+
+.description {
+	@extend .small;
+}
+
+.price {
+	@extend .float-right;
+}

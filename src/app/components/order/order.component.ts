@@ -7,6 +7,7 @@ import { OrderService } from '@app/services/order.service';
 	styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
+	selectedIndex = 0;
 	title = 'Order';
 	items: string[];
 

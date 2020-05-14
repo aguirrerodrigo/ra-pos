@@ -1,14 +1,14 @@
-<h2>
-	{{ title }}&nbsp;&nbsp;&nbsp;<button
-		class="btn btn-primary"
-		(click)="onAdd($event)"
-	>
-		Add Order
-	</button>
-</h2>
-<ul>
-	<li *ngFor="let item of items">
-		{{ item }}
-	</li>
-</ul>
-<p>{{ items.length }} items</p>
+<div class="order-container">
+	<div class="header">
+		Orders
+	</div>
+	<ul class="list">
+		<li
+			class="item"
+			[class.selected]="i == selectedIndex"
+			*ngFor="let item of items; let i = index"
+		>
+			{{ item }}
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,22 @@
+@import '~bootstrap/scss/bootstrap';
+
+.order-container {
+	@extend .card;
+}
+
+.header {
+	@extend .card-header;
+}
+
+.list {
+	@extend .list-group, .list-group-flush;
+}
+
+.item {
+	@extend .list-group-item, .list-group-item-action;
+	cursor: pointer;
+}
+
+.selected {
+	@extend .list-group-item-success;
+}

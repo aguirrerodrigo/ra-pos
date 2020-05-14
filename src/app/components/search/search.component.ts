@@ -17,9 +17,36 @@ import { AcronymStrategy } from './models/acronym-strategy';
 	styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-	private buffer = new Set<SearchItem>();
+	private _search = '';
+	private _buffer = new Set<SearchItem>();
 	result: SearchItem[] = [];
 	selectedIndex = 0;
+
+	get search() {
+		return this._search;
+	}
+
+	set search(value: string) {
+		this._search = value;
+
+		if (!this.items) return;
+		if (!this.searchStrategies) return;
+
+		this._buffer.clear();
+		if (this._search) {
+			for (const strategy of this.searchStrategies) {
+				for (const item of this.items) {
+					if (this._buffer.has(item)) continue;
+
+					if (item.match(this.search, strategy, this.caseSensitive)) {
+						this._buffer.add(item);
+					}
+				}
+			}
+		}
+		this.result = [...this._buffer];
+		this.selectedIndex = 0;
+	}
 
 	@ContentChild(TemplateRef) searchItemTemplate: TemplateRef<SearchItem>;
 
@@ -28,31 +55,14 @@ export class SearchComponent {
 		new WordStartsStrategy(),
 		new AcronymStrategy()
 	];
-	selectedItem: SearchItem;
 	@Input() placeholder = 'Search';
 	@Input() caseSensitive = false;
 	@Input() items: SearchItem[] = [];
 
-	@Output() selectedItemChange = new EventEmitter();
+	@Output() itemSelect = new EventEmitter<SearchItem>();
 
-	search(s: string) {
-		if (!this.items) return;
-		if (!this.searchStrategies) return;
-
-		this.buffer.clear();
-		if (s) {
-			for (const strategy of this.searchStrategies) {
-				for (const item of this.items) {
-					if (this.buffer.has(item)) continue;
-
-					if (item.match(s, strategy, this.caseSensitive)) {
-						this.buffer.add(item);
-					}
-				}
-			}
-		}
-
-		this.result = Array.from(this.buffer.values());
+	searchChange() {
+		this.result = Array.from(this._buffer.values());
 		this.selectedIndex = 0;
 	}
 
@@ -71,18 +81,17 @@ export class SearchComponent {
 	onEnterKey() {
 		if (!this.result || this.result.length === 0) return;
 
-		this.selectedItem = this.result[this.selectedIndex];
-		this.selectedItemChange.emit();
+		this.itemSelect.emit(this.result[this.selectedIndex]);
+		this.search = '';
 	}
 
 	onEscKey(e: KeyboardEvent) {
 		(e.target as HTMLInputElement).value = '';
-
-		this.search('');
+		this.search = '';
 	}
 
 	onItemClick(searchItem: SearchItem): void {
-		this.selectedItem = searchItem;
-		this.selectedItemChange.emit();
+		this.itemSelect.emit(searchItem);
+		this.search = '';
 	}
 }

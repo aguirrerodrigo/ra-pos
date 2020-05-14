@@ -1,16 +1,18 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Order } from '@app/models/order';
+import { MenuItem } from '@app/models/menu-item';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class OrderService {
-	orderAdded = new EventEmitter<any>();
+	current: Order = new Order();
 
-	constructor() {}
+	add(menuItem: MenuItem) {
+		this.current.add(menuItem);
+	}
 
-	getCurrentOrder() {
-		return {
-			items: ['Fried chicken', 'Beef and Mushroom Pizza (Lg)', 'Spaghetti']
-		};
+	remove(menuItem: MenuItem) {
+		this.current.remove(menuItem);
 	}
 }

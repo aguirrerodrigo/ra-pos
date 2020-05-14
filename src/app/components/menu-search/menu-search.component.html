@@ -1,9 +1,9 @@
 <app-search
 	#search
-	placeholder="Menu Search"
+	placeholder="Search menu"
 	[items]="searchItems"
 	[searchStrategies]="searchStrategies"
-	(selectedItemChange)="onSelect(search.selectedItem)"
+	(itemSelect)="onSelect($event)"
 >
 	<ng-template class="search-item-template" let-item>
 		<div class="title">

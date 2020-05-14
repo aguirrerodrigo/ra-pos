@@ -1,14 +1,29 @@
 <div class="order-container">
 	<div class="header">
-		Orders
+		<div class="title">
+			{{ title }}
+			<span *ngIf="order?.count > 0"
+				>&nbsp;-&nbsp;{{ order?.count }} Items</span
+			>
+		</div>
+		<div class="total-container">
+			<div class="total-label">Total:&nbsp;</div>
+			<div class="total">
+				{{ order?.total | currency: 'PH':'P ':'1.2-2' }}
+			</div>
+		</div>
 	</div>
-	<ul class="list">
-		<li
+	<div class="list">
+		<div class="order-empty" *ngIf="order?.count == 0">
+			<fa-icon [icon]="['fas', 'info-circle']"></fa-icon>
+			Start typing to search from menu.
+		</div>
+		<app-order-item
 			class="item"
-			[class.selected]="i == selectedIndex"
-			*ngFor="let item of items; let i = index"
-		>
-			{{ item }}
-		</li>
-	</ul>
+			[class.selected]="i === selectedIndex"
+			*ngFor="let item of order?.items; let i = index"
+			[item]="item"
+			[isSelected]="i === selectedIndex"
+		></app-order-item>
+	</div>
 </div>

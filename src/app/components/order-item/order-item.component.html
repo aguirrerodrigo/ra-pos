@@ -1,0 +1,14 @@
+<div class="order-item-container" (click)="selectItem()">
+	<div class="title-container">
+		<div class="title">
+			{{ item?.menuItem?.name }}
+		</div>
+		<small>{{ item?.menuItem?.description }}</small>
+	</div>
+	<div class="quantity">
+		<h5>{{ item?.quantity }}</h5>
+	</div>
+	<div class="total">
+		<h5>{{ item?.total | currency: 'PH':'P ' }}</h5>
+	</div>
+</div>

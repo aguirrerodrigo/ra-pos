@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SearchItem } from '@app/components/search/models/search-item';
 import { MenuService } from '@app/services/menu.service';
+import { OrderService } from '@app/services/order.service';
 import { SearchStrategy } from '@app/components/search/models/search-strategy';
 import { TextStartsStrategy } from '@app/components/search/models/text-starts-strategy';
 import { WordStartsStrategy } from '@app/components/search/models/word-starts-strategy';
@@ -23,7 +24,10 @@ export class MenuSearchComponent {
 		new BurgerAcronymStrategy()
 	];
 
-	constructor(private menuService: MenuService) {
+	constructor(
+		private menuService: MenuService,
+		private orderService: OrderService
+	) {
 		this.searchItems = this.getSearchItems();
 	}
 
@@ -39,6 +43,6 @@ export class MenuSearchComponent {
 	}
 
 	onSelect(searchItem: SearchItem) {
-		alert(`'Item selected: ${searchItem.model.name}`);
+		this.orderService.add(searchItem.model);
 	}
 }

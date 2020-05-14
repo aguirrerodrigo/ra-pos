@@ -5,11 +5,43 @@
 }
 
 .header {
-	@extend .card-header;
+	@extend .card-header, .text-success;
+}
+
+.title {
+	@extend .float-left;
+	margin-top: 6px;
+}
+
+.total-container {
+	@extend .float-right;
+}
+
+.total-container div {
+	display: inline-block;
+}
+
+.total-label {
+	margin-bottom: 5px;
+}
+
+.total {
+	font-size: 1.5rem;
+	font-weight: 500;
 }
 
 .list {
 	@extend .list-group, .list-group-flush;
+}
+
+fa-icon {
+	@extend .text-info;
+	opacity: 0.3;
+}
+
+.order-empty {
+	@extend .list-group-item, .text-muted;
+	font-weight: 500;
 }
 
 .item {

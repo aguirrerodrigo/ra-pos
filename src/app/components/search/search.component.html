@@ -1,22 +1,24 @@
 <div class="search-container">
 	<div class="search-container-absolute">
-		<input
-			class="search"
-			placeholder="{{ placeholder }}"
-			#searchInput
-			appAutoType
-			(input)="search(searchInput.value)"
-			(keydown.arrowdown)="onArrowDownKey()"
-			(keydown.arrowup)="onArrowUpKey()"
-			(keyup.enter)="onEnterKey()"
-			(keyup.esc)="onEscKey($event)"
-			autofocus
-		/>
+		<div class="search">
+			<fa-icon [icon]="['fas', 'search']"></fa-icon>
+			<input
+				placeholder="{{ placeholder }}"
+				#searchInput
+				appAutoType
+				[(ngModel)]="search"
+				(keydown.arrowdown)="onArrowDownKey()"
+				(keydown.arrowup)="onArrowUpKey()"
+				(keyup.enter)="onEnterKey()"
+				(keyup.esc)="onEscKey($event)"
+				autofocus
+			/>
+		</div>
 		<ul class="list">
 			<li
 				(click)="onItemClick(item)"
 				class="item"
-				[class.selected]="i == selectedIndex"
+				[class.selected]="i === selectedIndex"
 				*ngFor="let item of result; index as i"
 			>
 				<ng-container

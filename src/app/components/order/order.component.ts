@@ -1,24 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { OrderService } from '@app/services/order.service';
+import { Order } from '../../models/order';
 
 @Component({
 	selector: 'app-order',
 	templateUrl: './order.component.html',
 	styleUrls: ['./order.component.scss']
 })
-export class OrderComponent implements OnInit {
-	selectedIndex = 0;
+export class OrderComponent {
 	title = 'Order';
-	items: string[];
+	selectedIndex = 0;
+	order: Order;
 
 	constructor(private orderService: OrderService) {
-		this.items = orderService.getCurrentOrder().items;
+		this.order = orderService.current;
 	}
-
-	onAdd(e: MouseEvent) {
-		this.items.push('New Order Item');
-		console.log(e);
-	}
-
-	ngOnInit(): void {}
 }

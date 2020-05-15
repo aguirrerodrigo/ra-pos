@@ -1,14 +1,19 @@
 <div class="order-item-container" (click)="selectItem()">
 	<div class="title-container">
-		<div class="title">
-			{{ item?.menuItem?.name }}
+		<div class="title-description">
+			<div class="title">
+				{{ item?.menuItem?.name }}
+			</div>
+			<small>{{ item?.menuItem?.description }}</small>
 		</div>
-		<small>{{ item?.menuItem?.description }}</small>
+		<small class="unit-price">{{
+			item?.menuItem?.price | currency: 'PH':'P ':'1.2-2'
+		}}</small>
 	</div>
 	<div class="quantity">
-		<h5>{{ item?.quantity }}</h5>
+		{{ item?.quantity }}
 	</div>
 	<div class="total">
-		<h5>{{ item?.total | currency: 'PH':'P ' }}</h5>
+		{{ item?.total | currency: 'PH':'P ':'1.2-2' }}
 	</div>
 </div>

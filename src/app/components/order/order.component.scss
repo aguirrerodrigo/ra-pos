@@ -1,28 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
 
 .order-container {
-	@extend .card;
+	@extend .card, .border-success;
 }
 
 .header {
-	@extend .card-header, .text-success;
+	@extend .card-header,
+		.d-flex,
+		.flex-nowrap,
+		.align-items-center,
+		.text-success;
 }
 
-.title {
-	@extend .float-left;
-	margin-top: 6px;
+.item-count {
+	font-weight: 500;
 }
 
 .total-container {
-	@extend .float-right;
+	@extend .ml-auto;
+	white-space: nowrap;
 }
 
 .total-container div {
 	display: inline-block;
-}
-
-.total-label {
-	margin-bottom: 5px;
 }
 
 .total {

@@ -1,15 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 .order-item-container {
-	@extend .row, .align-items-center;
+	@extend .row, .align-items-sm-center;
 }
 
-.title-container {
-	@extend .col-8, .col-lg-9, .d-flex, .flex-wrap, .align-items-center;
-}
-
-.unit-price {
-	@extend .ml-auto;
+.title-description {
+	@extend .col-8, .order-1, .col-sm-6, .col-md-8;
 }
 
 .title {
@@ -24,10 +20,21 @@
 	white-space: nowrap;
 }
 
-.quantity {
-	@extend .col-1, .quantity-total;
+.total {
+	@extend .col-4, .order-2, .col-sm-3, .order-sm-4, .col-md-2, .quantity-total;
 }
 
-.total {
-	@extend .col-3, .col-lg-2, .quantity-total;
+.unit-price {
+	@extend .col-8,
+		.order-3,
+		.col-sm-2,
+		.order-sm-2,
+		.col-md-1,
+		.text-left,
+		.text-sm-right;
+	white-space: nowrap;
+}
+
+.quantity {
+	@extend .col-4, .order-4, .col-sm-1, .order-sm-3, .quantity-total;
 }

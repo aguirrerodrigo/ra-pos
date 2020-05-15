@@ -1,0 +1,7 @@
+[
+	"Start typing to search from menu.",
+	"Menu search can predict item codes by performing an acronym search.",
+	"Type a number before the search to add the number of items to the order - not yet supported.",
+	"Search results are sorted by relevance then name.",
+	"You can search the word 'burger' even if it is part of a longer word like 'cheeseburger'."
+]

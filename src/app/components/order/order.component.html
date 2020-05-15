@@ -15,9 +15,9 @@
 		</div>
 	</div>
 	<div class="list">
-		<div class="order-empty" *ngIf="order?.count == 0">
+		<div class="order-empty" *ngIf="order?.count === 0">
 			<fa-icon [icon]="['fas', 'info-circle']"></fa-icon>
-			Start typing to search from menu.
+			{{ randomInfo }}
 		</div>
 		<app-order-item
 			class="item"

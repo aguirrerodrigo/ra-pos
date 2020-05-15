@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Order } from '@app/models/order';
 import { MenuItem } from '@app/models/menu-item';
 
@@ -6,13 +6,16 @@ import { MenuItem } from '@app/models/menu-item';
 	providedIn: 'root'
 })
 export class OrderService {
-	current: Order = new Order();
+	order: Order = new Order();
+	orderChange = new EventEmitter<Order>();
 
 	add(menuItem: MenuItem) {
-		this.current.add(menuItem);
+		this.order.add(menuItem);
+		this.orderChange.emit(this.order);
 	}
 
 	remove(menuItem: MenuItem) {
-		this.current.remove(menuItem);
+		this.order.remove(menuItem);
+		this.orderChange.emit(this.order);
 	}
 }

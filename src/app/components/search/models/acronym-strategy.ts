@@ -12,13 +12,16 @@ export class AcronymStrategy extends SearchStrategy {
 		this.text = text;
 		this.search = search;
 
-		if (search[0] === text[0]) {
-			this.scanWordMatches();
-			super.addMatch(0, this.index);
+		return this.doMatch();
+	}
+
+	private doMatch() {
+		if (this.search[0] === this.text[0]) {
+			this.matchCurrentWord();
 		}
 
 		while (this.matchCount < this.search.length) {
-			if (search[this.matchCount] === ' ') {
+			if (this.search[this.matchCount] === ' ') {
 				this.index = this.text.indexOf(' ', this.index);
 				if (this.index < 0) {
 					return false;
@@ -36,9 +39,7 @@ export class AcronymStrategy extends SearchStrategy {
 
 				this.index++;
 				if (!this.checkFirstWordConjunction()) {
-					const startIndex = this.index;
-					this.scanWordMatches();
-					super.addMatch(startIndex, this.index - startIndex);
+					this.matchCurrentWord();
 				}
 			}
 		}
@@ -52,7 +53,8 @@ export class AcronymStrategy extends SearchStrategy {
 		return SearchStrategy.conjunctions.has(word);
 	}
 
-	private scanWordMatches(): void {
+	private matchCurrentWord(): void {
+		const startIndex = this.index;
 		while (
 			this.matchCount < this.search.length &&
 			this.index < this.text.length &&
@@ -61,5 +63,6 @@ export class AcronymStrategy extends SearchStrategy {
 			this.matchCount++;
 			this.index++;
 		}
+		super.addMatch(startIndex, this.index - startIndex);
 	}
 }

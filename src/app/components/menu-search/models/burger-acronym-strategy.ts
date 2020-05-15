@@ -14,18 +14,21 @@ export class BurgerAcronymStrategy extends SearchStrategy {
 		this.text = text;
 		this.search = search;
 
+		return this.doMatch();
+	}
+
+	private doMatch(): boolean {
 		this.nextBurgerIndex();
 		if (this.burgerIndex < 0) {
 			return false;
 		}
 
-		if (search[0] === text[0]) {
-			this.scanWordMatches();
-			super.addMatch(0, this.index);
+		if (this.search[0] === this.text[0]) {
+			this.matchCurrentWord();
 		}
 
 		while (this.matchCount < this.search.length) {
-			if (search[this.matchCount] === ' ') {
+			if (this.search[this.matchCount] === ' ') {
 				this.index = this.text.indexOf(' ', this.index);
 				if (this.index < 0) {
 					return false;
@@ -38,7 +41,8 @@ export class BurgerAcronymStrategy extends SearchStrategy {
 					this.index
 				);
 
-				if (search[this.matchCount] === 'b' && this.burgerIndex > 0) {
+				// adjust index to burger if needed
+				if (this.search[this.matchCount] === 'b' && this.burgerIndex > 0) {
 					if (this.index < 0 || this.burgerIndex <= this.index + 1) {
 						this.index = this.burgerIndex - 1;
 						this.nextBurgerIndex();
@@ -51,9 +55,7 @@ export class BurgerAcronymStrategy extends SearchStrategy {
 
 				this.index++;
 				if (!this.checkFirstWordConjunction()) {
-					const startIndex = this.index;
-					this.scanWordMatches();
-					super.addMatch(startIndex, this.index - startIndex);
+					this.matchCurrentWord();
 				}
 			}
 		}
@@ -81,7 +83,8 @@ export class BurgerAcronymStrategy extends SearchStrategy {
 		return SearchStrategy.conjunctions.has(word);
 	}
 
-	private scanWordMatches(): void {
+	private matchCurrentWord(): void {
+		const startIndex = this.index;
 		while (
 			this.matchCount < this.search.length &&
 			this.index < this.text.length &&
@@ -90,5 +93,6 @@ export class BurgerAcronymStrategy extends SearchStrategy {
 			this.matchCount++;
 			this.index++;
 		}
+		super.addMatch(startIndex, this.index - startIndex);
 	}
 }

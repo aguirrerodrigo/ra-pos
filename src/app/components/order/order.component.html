@@ -1,17 +1,17 @@
 <div class="order-container">
 	<div class="header">
-		<div>
+		<span>
 			{{ title }}
-			<span *ngIf="order?.count > 0">-&nbsp;</span>
-			<span class="item-count" *ngIf="order?.count == 1"
-				>{{ order?.count }} Item</span
-			>
-			<span class="item-count" *ngIf="order?.count > 1"
-				>{{ order?.count }} Items</span
-			>
-		</div>
+		</span>
+		<span *ngIf="order?.count > 0">-&nbsp;</span>
+		<span class="item-count" *ngIf="order?.count == 1"
+			>{{ order?.count }} Item</span
+		>
+		<span class="item-count" *ngIf="order?.count > 1"
+			>{{ order?.count }} Items</span
+		>
 		<div class="total-container">
-			<div>Total:&nbsp;</div>
+			<div class="total-label">Total:&nbsp;</div>
 			<div class="total">
 				{{ order?.total | currency: 'PH':'P ':'1.2-2' }}
 			</div>

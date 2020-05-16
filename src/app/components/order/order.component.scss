@@ -10,10 +10,16 @@
 		.flex-nowrap,
 		.align-items-center,
 		.text-success;
+	font-size: 0.9rem;
 }
 
 .item-count {
+	white-space: nowrap;
 	font-weight: 500;
+}
+
+.total-label {
+	font-size: 0.8rem;
 }
 
 .total-container {
@@ -26,7 +32,7 @@
 }
 
 .total {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	font-weight: 500;
 }
 
@@ -47,6 +53,15 @@ fa-icon {
 .item {
 	@extend .list-group-item, .list-group-item-action;
 	cursor: pointer;
+}
+
+@include media-breakpoint-up(sm) {
+	.header {
+		font-size: 1rem;
+	}
+	.total {
+		font-size: 1.5rem;
+	}
 }
 
 // .selected {

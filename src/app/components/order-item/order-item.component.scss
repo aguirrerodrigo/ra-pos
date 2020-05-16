@@ -5,11 +5,11 @@
 }
 
 .title-description {
-	@extend .col-8, .order-1, .col-sm-6, .col-md-8;
+	@extend .col-7, .order-1, .col-sm-6, .col-md-8;
 }
 
 .title {
-	font-size: 1.25rem;
+	font-size: 1.1rem;
 	font-weight: 500;
 }
 
@@ -20,8 +20,8 @@
 }
 
 .total {
-	@extend .col-4, .order-2, .col-sm-3, .order-sm-4, .col-md-2, .quantity-total;
-	font-size: 1.25rem;
+	@extend .col-5, .order-2, .col-sm-3, .order-sm-4, .col-md-2, .quantity-total;
+	font-size: 1.1rem;
 }
 
 .unit-price {
@@ -41,6 +41,12 @@
 }
 
 @include media-breakpoint-up(sm) {
+	.title {
+		font-size: 1.25rem;
+	}
+	.total {
+		font-size: 1.25rem;
+	}
 	.quantity {
 		font-size: 1.25rem;
 	}

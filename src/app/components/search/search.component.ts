@@ -4,7 +4,9 @@ import {
 	Output,
 	ContentChild,
 	TemplateRef,
-	EventEmitter
+	EventEmitter,
+	ViewChild,
+	ElementRef
 } from '@angular/core';
 import { SearchItem } from './models/search-item';
 import { TextStartsStrategy } from './models/text-starts-strategy';
@@ -49,6 +51,7 @@ export class SearchComponent {
 		this.selectedIndex = 0;
 	}
 
+	@ViewChild('searchInput') searchElement: ElementRef;
 	@ContentChild(TemplateRef) searchItemTemplate: TemplateRef<SearchItem>;
 
 	@Input() searchStrategies = [
@@ -102,6 +105,7 @@ export class SearchComponent {
 	onItemClick(searchItem: SearchItem): void {
 		this.itemSelect.emit(searchItem);
 		this.search = '';
+		this.searchElement.nativeElement.focus();
 	}
 
 	private leftTrim(s: string) {

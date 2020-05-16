@@ -3,7 +3,10 @@
 		<div>
 			{{ title }}
 			<span *ngIf="order?.count > 0">-&nbsp;</span>
-			<span class="item-count" *ngIf="order?.count > 0"
+			<span class="item-count" *ngIf="order?.count == 1"
+				>{{ order?.count }} Item</span
+			>
+			<span class="item-count" *ngIf="order?.count > 1"
 				>{{ order?.count }} Items</span
 			>
 		</div>

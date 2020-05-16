@@ -1,0 +1,43 @@
+<div class="search-container">
+	<div class="search-container-absolute">
+		<div class="search">
+			<fa-icon [icon]="['fas', 'search']"></fa-icon>
+			<input
+				placeholder="{{ placeholder }}"
+				#searchInput
+				appAutoType
+				[(ngModel)]="search"
+				(keydown.arrowdown)="onArrowDownKey($event)"
+				(keydown.arrowup)="onArrowUpKey($event)"
+				(keyup.enter)="onEnterKey($event)"
+				(keyup.esc)="onEscKey($event)"
+				autofocus
+			/>
+		</div>
+		<div *ngIf="quantity > 1 || result.length > 0" class="result">
+			<div *ngIf="quantity > 1" class="result-header">
+				<strong>{{ quantity }}</strong> items of<span
+					*ngIf="result.length <= 0"
+					>...</span
+				>
+			</div>
+			<ul class="list">
+				<li
+					(click)="onItemClick(item)"
+					class="item"
+					[class.selected]="i === selectedIndex"
+					*ngFor="let item of result; index as i"
+				>
+					<ng-container
+						select=".search-item-template"
+						*ngTemplateOutlet="
+							searchItemTemplate;
+							context: { $implicit: item }
+						"
+					>
+					</ng-container>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

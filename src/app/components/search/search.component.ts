@@ -27,18 +27,19 @@ export class SearchComponent {
 	}
 
 	set search(value: string) {
-		this._search = this.leftTrim(value);
+		this._search = value;
 
 		if (!this.items) return;
 		if (!this.searchStrategies) return;
 
+		const search = this.leftTrim(value);
 		this.buffer.clear();
-		if (this._search) {
+		if (search) {
 			for (const strategy of this.searchStrategies) {
 				for (const item of this.items) {
 					if (this.buffer.has(item)) continue;
 
-					if (item.match(this.search, strategy, this.caseSensitive)) {
+					if (item.match(search, strategy, this.caseSensitive)) {
 						this.buffer.add(item);
 					}
 				}
@@ -62,23 +63,29 @@ export class SearchComponent {
 	@Output() itemSelect = new EventEmitter<SearchItem>();
 
 	searchChange() {
-		this.result = Array.from(this.buffer.values());
+		this.result = [...this.buffer];
 		this.selectedIndex = 0;
 	}
 
-	onArrowDownKey(): void {
+	onArrowDownKey(e: KeyboardEvent): void {
+		e.preventDefault();
+
 		if (this.selectedIndex < this.result.length - 1) {
 			this.selectedIndex++;
 		}
 	}
 
-	onArrowUpKey(): void {
+	onArrowUpKey(e: KeyboardEvent): void {
+		e.preventDefault();
+
 		if (this.selectedIndex > 0) {
 			this.selectedIndex--;
 		}
 	}
 
-	onEnterKey() {
+	onEnterKey(e: KeyboardEvent) {
+		e.preventDefault();
+
 		if (!this.result || this.result.length === 0) return;
 
 		this.itemSelect.emit(this.result[this.selectedIndex]);
@@ -86,6 +93,8 @@ export class SearchComponent {
 	}
 
 	onEscKey(e: KeyboardEvent) {
+		e.preventDefault();
+
 		(e.target as HTMLInputElement).value = '';
 		this.search = '';
 	}
@@ -96,6 +105,8 @@ export class SearchComponent {
 	}
 
 	private leftTrim(s: string) {
+		if (!s) return s;
+
 		let index = 0;
 		while (index < s.length && s[index] === ' ') {
 			index++;

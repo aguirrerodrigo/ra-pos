@@ -1,0 +1,57 @@
+@import '~bootstrap/scss/bootstrap';
+
+.search-container {
+	width: 100%;
+	margin: 10px 0px;
+	height: 40px;
+}
+
+.search-container-absolute {
+	position: absolute;
+	z-index: 1000;
+	width: calc(100% - 30px);
+}
+
+.search fa-icon {
+	position: absolute;
+	z-index: 2;
+	display: block;
+	width: 2.375rem;
+	height: 2.375rem;
+	line-height: 2.375rem;
+	text-align: center;
+	pointer-events: none;
+	color: #aaa;
+}
+
+.search input {
+	@extend .form-control;
+	padding-left: 2.375rem;
+}
+
+.result {
+	@extend .card, .border-info, .mt-2;
+}
+
+.result-header {
+	@extend .card-header, .text-info;
+	font-size: 0.8rem;
+	font-weight: 400;
+}
+.result-header strong {
+	font-weight: 500;
+}
+
+.list {
+	@extend .list-group, .list-group-flush;
+	z-index: 1000;
+}
+
+.item {
+	@extend .list-group-item, .list-group-item-action;
+	cursor: pointer;
+}
+
+.selected {
+	@extend .list-group-item-primary;
+}

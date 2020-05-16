@@ -18,6 +18,7 @@ import { OrderItemComponent } from './components/order-item/order-item.component
 import { SearchComponent } from './components/search/search.component';
 import { MenuSearchComponent } from './components/menu-search/menu-search.component';
 import { AutoTypeDirective } from './directives/auto-type.directive';
+import { AddItemSearchComponent } from './components/add-item-search/add-item-search.component';
 
 @NgModule({
 	declarations: [
@@ -25,6 +26,7 @@ import { AutoTypeDirective } from './directives/auto-type.directive';
 		OrderComponent,
 		OrderItemComponent,
 		SearchComponent,
+		AddItemSearchComponent,
 		MenuSearchComponent,
 		AutoTypeDirective
 	],

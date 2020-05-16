@@ -1,9 +1,9 @@
-<app-search
+<app-add-item-search
 	#search
 	placeholder="Search menu"
 	[items]="searchItems"
 	[searchStrategies]="searchStrategies"
-	(itemSelect)="onSelect($event)"
+	(itemSelect)="onSelect($event, search.quantity)"
 >
 	<ng-template class="search-item-template" let-item>
 		<div class="title">
@@ -14,4 +14,4 @@
 			{{ item.model.price | currency: 'PH':'P ':'1.2-2' }}
 		</div>
 	</ng-template>
-</app-search>
+</app-add-item-search>

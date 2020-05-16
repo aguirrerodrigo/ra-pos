@@ -20,6 +20,7 @@ export class OrderService {
 			orderItem.quantity += quantity;
 		} else {
 			orderItem = new OrderItem(menuItem);
+			orderItem.quantity = quantity;
 			this.map.set(menuItem, orderItem);
 
 			this.order.add(orderItem);

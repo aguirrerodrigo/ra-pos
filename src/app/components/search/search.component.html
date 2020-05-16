@@ -7,9 +7,9 @@
 				#searchInput
 				appAutoType
 				[(ngModel)]="search"
-				(keydown.arrowdown)="onArrowDownKey()"
-				(keydown.arrowup)="onArrowUpKey()"
-				(keyup.enter)="onEnterKey()"
+				(keydown.arrowdown)="onArrowDownKey($event)"
+				(keydown.arrowup)="onArrowUpKey($event)"
+				(keyup.enter)="onEnterKey($event)"
 				(keyup.esc)="onEscKey($event)"
 				autofocus
 			/>

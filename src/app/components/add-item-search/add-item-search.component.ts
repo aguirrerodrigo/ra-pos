@@ -40,7 +40,10 @@ export class AddItemSearchComponent extends SearchComponent {
 		}
 
 		if (numbers) {
-			this.quantity = Number(numbers);
+			const n = Number(numbers);
+			if (n > 0) {
+				this.quantity = n;
+			}
 			this.formattedSearch = this.formattedSearch.substr(numbers.length);
 		}
 	}

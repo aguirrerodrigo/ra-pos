@@ -1,15 +1,15 @@
 <div class="order-item-container" (click)="selectItem()">
 	<div class="title-description">
 		<div class="title">
-			{{ item?.menuItem?.name }}
+			{{ item?.name }}
 		</div>
-		<small>{{ item?.menuItem?.description }}</small>
+		<small>{{ item?.description }}</small>
 	</div>
 	<div class="total">
 		{{ item?.total | currency: 'PH':'P ':'1.2-2' }}
 	</div>
 	<div class="unit-price">
-		<small>{{ item?.menuItem?.price | currency: 'PH':'P ':'1.2-2' }}</small>
+		<small>{{ item?.price | currency: 'PH':'P ':'1.2-2' }}</small>
 	</div>
 	<div class="quantity">
 		{{ item?.quantity }}

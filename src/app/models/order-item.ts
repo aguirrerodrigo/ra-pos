@@ -1,13 +1,18 @@
 import { MenuItem } from './menu-item';
 
 export class OrderItem {
+	name = '';
+	description = '';
+	price = 0;
 	quantity = 1;
 
 	get total() {
-		return this.menuItem.price * this.quantity;
+		return this.price * this.quantity;
 	}
 
-	constructor(public menuItem: MenuItem) {
-		if (!menuItem) throw Error('menuItem cannot is required.');
+	constructor(menuItem: MenuItem) {
+		this.name = menuItem.name;
+		this.description = menuItem.description;
+		this.price = menuItem.price;
 	}
 }

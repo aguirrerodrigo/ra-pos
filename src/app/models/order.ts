@@ -1,31 +1,35 @@
-import { MenuItem } from './menu-item';
 import { OrderItem } from './order-item';
 
 export class Order {
-	private map = new Map<MenuItem, OrderItem>();
 	items = new Set<OrderItem>();
-	count = 0;
-	total = 0;
 
-	add(menuItem: MenuItem) {
-		if (this.map.has(menuItem)) {
-			this.map.get(menuItem).quantity++;
-		} else {
-			const item = new OrderItem(menuItem);
-			this.map.set(menuItem, item);
-			this.items.add(item);
+	get count(): number {
+		let count = 0;
+		for (const item of this.items) {
+			count += item.quantity;
 		}
-		this.total += menuItem.price;
-		this.count++;
+
+		return count;
 	}
 
-	remove(menuItem: MenuItem) {
-		if (this.map.has(menuItem)) {
-			const item = this.map.get(menuItem);
-			this.map.delete(menuItem);
+	get total(): number {
+		let total = 0;
+		for (const item of this.items) {
+			total += item.total;
+		}
+
+		return total;
+	}
+
+	add(item: OrderItem) {
+		if (!this.items.has(item)) {
+			this.items.add(item);
+		}
+	}
+
+	delete(item: OrderItem) {
+		if (this.items.has(item)) {
 			this.items.delete(item);
-			this.total -= menuItem.price * item.quantity;
-			this.count -= item.quantity;
 		}
 	}
 }

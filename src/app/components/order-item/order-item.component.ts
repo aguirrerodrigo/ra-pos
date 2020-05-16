@@ -14,6 +14,10 @@ export class OrderItemComponent {
 	constructor(private orderService: OrderService) {}
 
 	selectItem() {
-		this.orderService.remove(this.item.menuItem);
+		if (this.item.quantity > 1) {
+			this.item.quantity--;
+		} else {
+			this.orderService.delete(this.item);
+		}
 	}
 }

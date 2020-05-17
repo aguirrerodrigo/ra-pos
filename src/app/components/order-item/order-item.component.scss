@@ -16,6 +16,7 @@
 .quantity-total {
 	font-weight: 500;
 	text-align: right;
+	direction: rtl;
 	white-space: nowrap;
 }
 
@@ -46,6 +47,9 @@
 	}
 	.total {
 		font-size: 1.25rem;
+	}
+	.unit-price {
+		direction: rtl;
 	}
 	.quantity {
 		font-size: 1.25rem;

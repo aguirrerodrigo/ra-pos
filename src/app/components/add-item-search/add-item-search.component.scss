@@ -30,7 +30,8 @@
 }
 
 .result {
-	@extend .card, .border-info, .mt-2;
+	@extend .card, .shadow, .border-info, .mt-2, .mb-2;
+	z-index: 1000;
 }
 
 .result-header {
@@ -45,7 +46,6 @@
 
 .list {
 	@extend .list-group, .list-group-flush;
-	z-index: 1000;
 }
 
 .item {

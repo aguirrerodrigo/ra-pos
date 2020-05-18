@@ -30,7 +30,7 @@
 }
 
 .list {
-	@extend .list-group, .mt-2;
+	@extend .list-group, .shadow, .mt-2, .mb-2;
 	z-index: 1000;
 }
 

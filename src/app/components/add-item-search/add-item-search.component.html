@@ -26,6 +26,7 @@
 					(click)="onItemClick(item)"
 					class="item"
 					[class.selected]="i === selectedIndex"
+					[appScrollIntoView]="i === selectedIndex"
 					*ngFor="let item of result; index as i"
 				>
 					<ng-container

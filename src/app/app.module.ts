@@ -19,6 +19,7 @@ import { SearchComponent } from './components/search/search.component';
 import { MenuSearchComponent } from './components/menu-search/menu-search.component';
 import { AutoTypeDirective } from './directives/auto-type.directive';
 import { AddItemSearchComponent } from './components/add-item-search/add-item-search.component';
+import { ScrollIntoViewDirective } from './directives/scroll-into-view.directive';
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,8 @@ import { AddItemSearchComponent } from './components/add-item-search/add-item-se
 		SearchComponent,
 		AddItemSearchComponent,
 		MenuSearchComponent,
-		AutoTypeDirective
+		AutoTypeDirective,
+		ScrollIntoViewDirective
 	],
 	imports: [
 		BrowserModule,

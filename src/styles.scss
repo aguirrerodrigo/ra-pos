@@ -2,3 +2,45 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+.modal-open {
+	.modal {
+		overflow: hidden !important;
+	}
+}
+
+.modal {
+	&.show .modal-dialog {
+		transition: all 0.25s ease-out;
+		opacity: 0;
+		transform: translate(0, -150px);
+	}
+
+	&.animate .modal-dialog {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+.modal-backdrop {
+	&.show {
+		transition: all 0.25s linear;
+		opacity: 0;
+	}
+
+	&.animate {
+		opacity: 0.5;
+	}
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}

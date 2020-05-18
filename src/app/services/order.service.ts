@@ -11,6 +11,11 @@ export class OrderService {
 	map = new OrderMenuMap();
 	order = new Order();
 	orderChange = new EventEmitter<Order>();
+	itemEdit = new EventEmitter<OrderItem>();
+
+	editItem(orderItem: OrderItem) {
+		this.itemEdit.emit(orderItem);
+	}
 
 	add(menuItem: MenuItem, quantity = 1) {
 		let orderItem: OrderItem;

@@ -14,6 +14,7 @@
 		[min]="min"
 		[max]="max"
 		[(ngModel)]="value"
+		onfocus="setTimeout(() => this.select());"
 	/>
 	<button
 		class="spinner"

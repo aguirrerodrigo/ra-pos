@@ -14,10 +14,10 @@
 }
 
 .quantity-total {
+	@extend .text-nowrap;
 	font-weight: 500;
 	text-align: right;
 	direction: rtl;
-	white-space: nowrap;
 }
 
 .total {
@@ -32,8 +32,8 @@
 		.order-sm-2,
 		.col-md-1,
 		.text-left,
-		.text-sm-right;
-	white-space: nowrap;
+		.text-sm-right,
+		.text-nowrap;
 }
 
 .quantity {

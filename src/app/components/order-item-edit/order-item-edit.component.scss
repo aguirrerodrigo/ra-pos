@@ -1,4 +1,64 @@
+@import '~bootstrap/scss/bootstrap';
+
+.header {
+	@extend .modal-header, .text-success;
+}
+
+.header :first-child {
+	@extend .mr-2;
+}
+
+.title {
+	@extend .modal-title;
+	font-size: 1.25rem;
+}
+
+.total {
+	@extend .modal-title, .text-nowrap;
+	font-size: 1.25rem;
+}
+
 .total-label {
 	font-size: 0.8rem;
 	font-weight: 400;
+}
+
+.body {
+	@extend .modal-body, .d-flex, .flex-row;
+}
+
+.description {
+	@extend .mr-2;
+	font-size: 0.9rem;
+}
+
+.price {
+	@extend .mt-1;
+}
+
+.input {
+	@extend .ml-auto;
+	width: 60px;
+}
+
+.footer {
+	@extend .modal-footer;
+}
+
+.delete {
+	@extend .btn, .btn-danger, .mr-auto;
+}
+
+.cancel {
+	@extend .btn, .btn-secondary;
+}
+
+.save {
+	@extend .btn, .btn-primary;
+}
+
+@include media-breakpoint-up(sm) {
+	.title {
+		font-size: 1.5rem;
+	}
 }

@@ -13,12 +13,16 @@
 	font-size: 0.9rem;
 }
 
+.title {
+	@extend .mr-2;
+}
+
 .can-hide {
 	display: none;
 }
 
 .item-count {
-	white-space: nowrap;
+	@extend .text-nowrap;
 	font-weight: 500;
 }
 
@@ -27,8 +31,7 @@
 }
 
 .total-container {
-	@extend .ml-auto;
-	white-space: nowrap;
+	@extend .ml-auto, .text-nowrap;
 }
 
 .total-container div {

@@ -1,17 +1,19 @@
 <div class="order-container">
 	<div class="header">
-		<span [class.can-hide]="order?.count > 0">
-			{{ title }}
-		</span>
-		<span [class.can-hide]="order.count > 0" *ngIf="order?.count > 0"
-			>&nbsp;-&nbsp;</span
-		>
-		<span class="item-count" *ngIf="order?.count == 1"
-			>{{ order?.count }} Item</span
-		>
-		<span class="item-count" *ngIf="order?.count > 1"
-			>{{ order?.count }} Items</span
-		>
+		<div class="title">
+			<span [class.can-hide]="order?.count > 0">
+				{{ title }}
+			</span>
+			<span [class.can-hide]="order.count > 0" *ngIf="order?.count > 0"
+				>&nbsp;-&nbsp;</span
+			>
+			<span class="item-count" *ngIf="order?.count == 1"
+				>{{ order?.count }} Item</span
+			>
+			<span class="item-count" *ngIf="order?.count > 1"
+				>{{ order?.count }} Items</span
+			>
+		</div>
 		<div class="total-container">
 			<div class="total-label">Total:&nbsp;</div>
 			<div class="total">

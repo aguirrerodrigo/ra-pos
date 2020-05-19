@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchComponent } from '../search/search.component';
+import { SearchComponent } from '@app/components/search/search.component';
 
 @Component({
 	selector: 'app-add-item-search',

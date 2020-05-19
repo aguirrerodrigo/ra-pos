@@ -21,6 +21,7 @@ import { AutoTypeDirective } from './directives/auto-type.directive';
 import { AddItemSearchComponent } from './components/add-item-search/add-item-search.component';
 import { ScrollIntoViewDirective } from './directives/scroll-into-view.directive';
 import { OrderItemEditComponent } from './components/order-item-edit/order-item-edit.component';
+import { NumberInputComponent } from './components/number-input/number-input.component';
 
 @NgModule({
 	declarations: [
@@ -32,7 +33,8 @@ import { OrderItemEditComponent } from './components/order-item-edit/order-item-
 		MenuSearchComponent,
 		AutoTypeDirective,
 		ScrollIntoViewDirective,
-		OrderItemEditComponent
+		OrderItemEditComponent,
+		NumberInputComponent
 	],
 	imports: [
 		BrowserModule,

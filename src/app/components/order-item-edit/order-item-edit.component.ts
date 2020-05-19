@@ -1,7 +1,7 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
 import { OrderItem } from '@app/models/order-item';
-import { ModalService } from '../../services/modal.service';
-import { OrderService } from '../../services/order.service';
+import { ModalService } from '@app/services/modal.service';
+import { OrderService } from '@app/services/order.service';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({

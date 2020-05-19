@@ -1,0 +1,14 @@
+@import '~bootstrap/scss/bootstrap';
+
+.number-input-container {
+	@extend .d-flex, .flex-column, .align-items-center;
+}
+
+.spinner {
+	@extend .btn, .btn-link;
+	padding: 0px;
+}
+
+.input {
+	@extend .form-control, .text-center;
+}

@@ -24,13 +24,17 @@
 
 .modal-backdrop {
 	&.show {
-		transition: all 0.25s linear;
+		transition: opacity 0.25s linear;
 		opacity: 0;
 	}
 
 	&.animate {
 		opacity: 0.5;
 	}
+}
+
+.modal-content {
+	margin-bottom: 200px;
 }
 
 /* Chrome, Safari, Edge, Opera */

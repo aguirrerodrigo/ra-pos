@@ -1,7 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { OrderItem } from '@app/models/order-item';
-import { OrderService } from '../../services/order.service';
-import { OrderItemEditComponent } from '../order-item-edit/order-item-edit.component';
+import { OrderService } from '@app/services/order.service';
 
 @Component({
 	selector: 'app-order-item',

@@ -1,0 +1,27 @@
+<div class="number-input-container">
+	<button
+		class="spinner"
+		tabindex="-1"
+		type="button"
+		(click)="increment()"
+		[class.disabled]="value >= max"
+	>
+		<fa-icon [icon]="['fas', 'chevron-up']"></fa-icon>
+	</button>
+	<input
+		class="input"
+		type="number"
+		[min]="min"
+		[max]="max"
+		[(ngModel)]="value"
+	/>
+	<button
+		class="spinner"
+		tabindex="-1"
+		type="button"
+		(click)="decrement()"
+		[class.disabled]="value <= min"
+	>
+		<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
+	</button>
+</div>

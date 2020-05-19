@@ -8,7 +8,9 @@ export class ModalService {
 	constructor(private ngbModal: NgbModal) {}
 
 	open(content: any): NgbModalRef {
-		const modal = this.ngbModal.open(content, { centered: true });
+		const modal = this.ngbModal.open(content, {
+			centered: !this.isTouchDevice()
+		});
 		const backdropElem = (modal as any)._backdropCmptRef.location
 			.nativeElement;
 		const modalElem = (modal as any)._windowCmptRef.location.nativeElement;
@@ -25,5 +27,9 @@ export class ModalService {
 		};
 
 		return modal;
+	}
+
+	private isTouchDevice() {
+		return 'ontouchstart' in document.documentElement;
 	}
 }

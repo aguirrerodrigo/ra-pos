@@ -1,43 +1,36 @@
 <ng-template #content>
-	<div class="modal-header text-success">
-		<h4 class="modal-title">{{ item.name }}</h4>
-		<h4 class="modal-title">
+	<div class="header">
+		<h4 class="title">{{ item.name }}</h4>
+		<h4 class="total">
 			<span class="total-label">Total:&nbsp;</span
 			>{{ total | currency: 'PH':'P ':'1.2-2' }}
 		</h4>
 	</div>
-	<div class="modal-body">
-		<div class="d-flex flex-row">
-			<div class="mr-auto">
-				<div>
-					<small>{{ item.description }}</small>
-				</div>
-				<div>
-					<small>{{ item.price | currency: 'PH':'P ':'1.2-2' }}</small>
-				</div>
+	<div class="body">
+		<div class="description">
+			<div>
+				{{ item.description }}
 			</div>
-			<div style="width: 4em;">
-				<input
-					class="form-control"
-					type="number"
-					min="1"
-					max="9999"
-					style="text-align: right;"
-					[(ngModel)]="quantity"
-					(keydown.enter)="save()"
-					onfocus="this.select();"
-				/>
+			<div class="price">
+				{{ item.price | currency: 'PH':'P ':'1.2-2' }}
 			</div>
 		</div>
+		<app-number-input
+			class="input"
+			min="1"
+			max="9999"
+			[(value)]="quantity"
+			(keydown.enter)="save()"
+		></app-number-input>
 	</div>
 	<div class="modal-footer">
-		<button type="button" class="btn btn-danger mr-auto" (click)="delete()">
+		<button type="button" class="delete" (click)="delete()">
 			Delete
 		</button>
-		<button type="button" class="btn btn-secondary" (click)="cancel()">
+		<button type="button" class="cancel" (click)="cancel()">
 			Cancel
 		</button>
-		<button type="button" class="btn btn-primary" (click)="save()">
+		<button type="button" class="save" (click)="save()">
 			Save
 		</button>
 	</div>

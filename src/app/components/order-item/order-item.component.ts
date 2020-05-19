@@ -11,8 +11,4 @@ export class OrderItemComponent {
 	@Input() item: OrderItem;
 
 	constructor(private orderService: OrderService) {}
-
-	selectItem() {
-		this.orderService.editItem(this.item);
-	}
 }

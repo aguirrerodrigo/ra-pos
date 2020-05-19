@@ -4,6 +4,22 @@
 	@extend .card, .border-success, .mb-2;
 }
 
+.order-container.has-focus {
+	box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.focus-container {
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+
+.focus {
+	opacity: 0px;
+	width: 0px;
+	height: 0px;
+}
+
 .header {
 	@extend .card-header,
 		.d-flex,
@@ -74,6 +90,6 @@ fa-icon {
 	}
 }
 
-// .selected {
-// 	@extend .list-group-item-success;
-// }
+.selected {
+	@extend .list-group-item-success;
+}

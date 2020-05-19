@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { OrderService } from '@app/services/order.service';
 import { InfoService } from '@app/services/info.service';
 import { Order } from '@app/models/order';
+import { OrderItem } from '@app/models/order-item';
 
 @Component({
 	selector: 'app-order',
@@ -9,30 +10,99 @@ import { Order } from '@app/models/order';
 	styleUrls: ['./order.component.scss']
 })
 export class OrderComponent {
+	private _hasFocus = false;
 	title = 'Order';
 	randomInfo = '';
-	selectedIndex = 0;
 	order: Order;
+	selectedIndex = -1;
+
+	get hasFocus() {
+		return this._hasFocus;
+	}
+
+	set hasFocus(value) {
+		if (value) {
+			if (this.selectedIndex > this.order.items.length - 1) {
+				this.selectedIndex = this.order.items.length - 1;
+			} else if (this.selectedIndex < 0) {
+				this.selectedIndex = 0;
+			}
+		}
+
+		this._hasFocus = value;
+	}
 
 	constructor(
 		private orderService: OrderService,
 		private infoService: InfoService
 	) {
 		this.order = orderService.order;
+		this.orderService.itemEdit.subscribe((item: OrderItem) =>
+			this.onItemEditing(item)
+		);
 		this.orderService.orderChange.subscribe((o: Order) =>
 			this.onOrderChange(o)
 		);
 		this.generateRandomInfo();
 	}
 
-	private onOrderChange(order: Order) {
+	onArrowUpKey(): void {
+		if (this.selectedIndex > 0) {
+			this.selectedIndex--;
+		}
+	}
+
+	onArrowDownKey(): void {
+		if (this.selectedIndex < this.order.items.length - 1) {
+			this.selectedIndex++;
+		}
+	}
+
+	onEnterKey(): void {
+		this.orderService.editItem(this.order.items[this.selectedIndex]);
+	}
+
+	onArrowLeftKey(): void {
+		const item = this.order.items[this.selectedIndex];
+		if (item.quantity > 1) {
+			item.quantity--;
+		}
+	}
+
+	onArrowRightKey(): void {
+		const item = this.order.items[this.selectedIndex];
+		if (item.quantity < 9999) {
+			item.quantity++;
+		}
+	}
+
+	onDeleteKey(): void {
+		const item = this.order.items[this.selectedIndex];
+		this.orderService.delete(item);
+
+		const length = this.order.items.length;
+		if (this.selectedIndex >= length) {
+			this.selectedIndex = length - 1;
+		}
+	}
+
+	editItem(item: OrderItem): void {
+		this.orderService.editItem(item);
+	}
+
+	private onItemEditing(item: OrderItem): void {
+		this.hasFocus = false; // prevents 'ExpressionChangedAfterItHasBeenCheckedError'
+		this.selectedIndex = this.order.items.indexOf(item);
+	}
+
+	private onOrderChange(order: Order): void {
 		this.order = order;
 		if (this.order.count === 0) {
 			this.generateRandomInfo();
 		}
 	}
 
-	generateRandomInfo(): void {
+	private generateRandomInfo(): void {
 		this.randomInfo = this.infoService.getRandomInfo();
 	}
 }

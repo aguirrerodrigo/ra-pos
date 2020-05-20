@@ -1,21 +1,13 @@
 <div
 	class="order-container"
-	[class.has-focus]="hasFocus"
-	onmouseup="this.querySelector('.focus').focus()"
+	tabindex="0"
+	(keydown.arrowup)="onArrowUpKey()"
+	(keydown.arrowdown)="onArrowDownKey()"
+	(keydown.enter)="onEnterKey()"
+	(keydown.arrowleft)="onArrowLeftKey()"
+	(keydown.arrowright)="onArrowRightKey()"
+	(keydown.delete)="onDeleteKey()"
 >
-	<div class="focus-container">
-		<input
-			class="focus"
-			(focus)="hasFocus = true"
-			(focusout)="hasFocus = false"
-			(keydown.arrowup)="onArrowUpKey()"
-			(keydown.arrowdown)="onArrowDownKey()"
-			(keydown.enter)="onEnterKey()"
-			(keydown.arrowleft)="onArrowLeftKey()"
-			(keydown.arrowright)="onArrowRightKey()"
-			(keydown.delete)="onDeleteKey()"
-		/>
-	</div>
 	<div class="header">
 		<div class="title">
 			<span [class.can-hide]="order?.count > 0">
@@ -45,8 +37,8 @@
 		</div>
 		<app-order-item
 			class="item"
-			[appScrollIntoView]="hasFocus && i === selectedIndex"
-			[class.selected]="hasFocus && i === selectedIndex"
+			[appScrollIntoView]="i === selectedIndex"
+			[class.selected]="i === selectedIndex"
 			*ngFor="let item of order?.items; let i = index"
 			[item]="item"
 			(click)="editItem(item)"

@@ -10,27 +10,10 @@ import { OrderItem } from '@app/models/order-item';
 	styleUrls: ['./order.component.scss']
 })
 export class OrderComponent {
-	private _hasFocus = false;
 	title = 'Order';
 	randomInfo = '';
 	order: Order;
-	selectedIndex = -1;
-
-	get hasFocus() {
-		return this._hasFocus;
-	}
-
-	set hasFocus(value) {
-		if (value) {
-			if (this.selectedIndex > this.order.items.length - 1) {
-				this.selectedIndex = this.order.items.length - 1;
-			} else if (this.selectedIndex < 0) {
-				this.selectedIndex = 0;
-			}
-		}
-
-		this._hasFocus = value;
-	}
+	selectedIndex = 0;
 
 	constructor(
 		private orderService: OrderService,
@@ -81,7 +64,7 @@ export class OrderComponent {
 		this.orderService.delete(item);
 
 		const length = this.order.items.length;
-		if (this.selectedIndex >= length) {
+		if (this.selectedIndex > 0 && this.selectedIndex >= length) {
 			this.selectedIndex = length - 1;
 		}
 	}
@@ -91,7 +74,6 @@ export class OrderComponent {
 	}
 
 	private onItemEditing(item: OrderItem): void {
-		this.hasFocus = false; // prevents 'ExpressionChangedAfterItHasBeenCheckedError'
 		this.selectedIndex = this.order.items.indexOf(item);
 	}
 

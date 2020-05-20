@@ -48,4 +48,8 @@ export class PaymentComponent {
 	toFormattedText(): void {
 		this._cash = this.format(this.cashValue);
 	}
+
+	checkout(): void {
+		this.orderService.order = new Order();
+	}
 }

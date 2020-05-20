@@ -17,12 +17,14 @@ import { OrderComponent } from './components/order/order.component';
 import { OrderItemComponent } from './components/order-item/order-item.component';
 import { SearchComponent } from './components/search/search.component';
 import { MenuSearchComponent } from './components/menu-search/menu-search.component';
-import { AutoTypeDirective } from './directives/auto-type.directive';
 import { AddItemSearchComponent } from './components/add-item-search/add-item-search.component';
-import { ScrollIntoViewDirective } from './directives/scroll-into-view.directive';
 import { OrderItemEditComponent } from './components/order-item-edit/order-item-edit.component';
 import { NumberInputComponent } from './components/number-input/number-input.component';
 import { PaymentComponent } from './components/payment/payment.component';
+
+import { AutoTypeDirective } from './directives/auto-type.directive';
+import { ScrollIntoViewDirective } from './directives/scroll-into-view.directive';
+import { SelectOnFocusDirective } from './directives/select-on-focus.directive';
 
 @NgModule({
 	declarations: [
@@ -32,11 +34,13 @@ import { PaymentComponent } from './components/payment/payment.component';
 		SearchComponent,
 		AddItemSearchComponent,
 		MenuSearchComponent,
-		AutoTypeDirective,
-		ScrollIntoViewDirective,
 		OrderItemEditComponent,
 		NumberInputComponent,
-		PaymentComponent
+		PaymentComponent,
+
+		AutoTypeDirective,
+		ScrollIntoViewDirective,
+		SelectOnFocusDirective
 	],
 	imports: [
 		BrowserModule,

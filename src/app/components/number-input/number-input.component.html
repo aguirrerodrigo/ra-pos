@@ -9,12 +9,12 @@
 		<fa-icon [icon]="['fas', 'chevron-up']"></fa-icon>
 	</button>
 	<input
+		appSelectOnFocus
 		class="input"
 		type="number"
 		[min]="min"
 		[max]="max"
 		[(ngModel)]="value"
-		onfocus="setTimeout(() => this.select());"
 	/>
 	<button
 		class="spinner"

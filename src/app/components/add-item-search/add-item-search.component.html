@@ -3,9 +3,10 @@
 		<div class="search">
 			<fa-icon [icon]="['fas', 'search']"></fa-icon>
 			<input
-				placeholder="{{ placeholder }}"
 				#searchInput
 				appAutoType
+				appSelectOnFocus
+				placeholder="{{ placeholder }}"
 				[(ngModel)]="search"
 				(keydown.arrowdown)="onArrowDownKey($event)"
 				(keydown.arrowup)="onArrowUpKey($event)"

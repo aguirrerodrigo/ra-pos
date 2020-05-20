@@ -46,6 +46,8 @@ export class OrderComponent {
 	}
 
 	onArrowLeftKey(): void {
+		if (this.order.items.length === 0) return;
+
 		const item = this.order.items[this.selectedIndex];
 		if (item.quantity > 1) {
 			item.quantity--;
@@ -53,6 +55,8 @@ export class OrderComponent {
 	}
 
 	onArrowRightKey(): void {
+		if (this.order.items.length === 0) return;
+
 		const item = this.order.items[this.selectedIndex];
 		if (item.quantity < 9999) {
 			item.quantity++;

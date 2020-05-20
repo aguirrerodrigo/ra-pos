@@ -15,10 +15,12 @@
 
 .item {
 	@extend .row, .align-items-end, .justify-content-end, .mb-1;
+	padding-bottom: 1px;
 }
 
 .label {
 	@extend .col, .text-right;
+	padding-bottom: 1px;
 }
 
 .currency {
@@ -34,6 +36,9 @@
 	font-weight: 500;
 	border: 0px;
 	border-bottom: 1px solid;
+	border-radius: 0px;
+	padding: 0px;
+	padding-bottom: 0px;
 }
 
 .cash:focus {

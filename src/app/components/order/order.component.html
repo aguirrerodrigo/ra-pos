@@ -41,6 +41,7 @@
 			[class.selected]="i === selectedIndex"
 			*ngFor="let item of order?.items; let i = index"
 			[item]="item"
+			(mousedown)="selectedIndex = i"
 			(click)="editItem(item)"
 		></app-order-item>
 	</div>

@@ -1,0 +1,47 @@
+<div
+	class="payment-container"
+	[ngClass]="{
+		danger: order.total > cashValue,
+		success: order.total <= cashValue
+	}"
+>
+	<div class="item">
+		<div class="label">Total</div>
+		<div class="currency">
+			{{ order.total | currency: 'PH':'P ':'1.2-2' }}
+		</div>
+	</div>
+	<div class="item">
+		<div class="label">Cash</div>
+		<div class="currency">
+			<input
+				class="cash"
+				[ngClass]="{
+					danger: order.total > cashValue,
+					success: order.total <= cashValue
+				}"
+				[(ngModel)]="cash"
+				(focus)="toValue()"
+				(focusout)="toFormattedText()"
+			/>
+		</div>
+	</div>
+	<div class="item">
+		<div class="label">Change</div>
+		<div class="currency">
+			{{ change | currency: 'PH':'P ':'1.2-2' }}
+		</div>
+	</div>
+</div>
+<div class="mt-2 float-right">
+	<button
+		class="checkout"
+		[ngClass]="{
+			danger: order.total > cashValue,
+			success: order.total <= cashValue
+		}"
+		[disabled]="order.total > cashValue ? true : null"
+	>
+		Checkout
+	</button>
+</div>

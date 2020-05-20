@@ -1,0 +1,61 @@
+@import '~bootstrap/scss/bootstrap';
+
+.payment-container {
+	@extend .mt-3;
+	padding: 0rem 1.25rem;
+}
+
+.payment-container.danger {
+	@extend .text-danger;
+}
+
+.payment-container.success {
+	@extend .text-success;
+}
+
+.item {
+	@extend .row, .align-items-end, .justify-content-end, .mb-1;
+}
+
+.label {
+	@extend .col, .text-right;
+}
+
+.currency {
+	@extend .col-7, .col-sm-4, .col-md-3, .text-right, .text-nowrap;
+	font-size: 1.25rem;
+	font-weight: 500;
+}
+
+.cash {
+	@extend .text-right;
+	width: 100%;
+	font-size: 1.25rem;
+	font-weight: 500;
+	border: 0px;
+	border-bottom: 1px solid;
+}
+
+.cash:focus {
+	outline: unset;
+}
+
+.cash.danger {
+	@extend .text-danger;
+}
+
+.cash.success {
+	@extend .text-success;
+}
+
+.checkout {
+	@extend .btn, .m-3;
+}
+
+.checkout.danger {
+	@extend .btn-danger;
+}
+
+.checkout.success {
+	@extend .btn-success;
+}

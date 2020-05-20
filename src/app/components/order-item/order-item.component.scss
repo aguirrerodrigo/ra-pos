@@ -14,9 +14,8 @@
 }
 
 .quantity-total {
-	@extend .text-nowrap;
+	@extend .text-nowrap, .text-right;
 	font-weight: 500;
-	text-align: right;
 	direction: rtl;
 }
 

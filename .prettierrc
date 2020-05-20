@@ -1,15 +1,16 @@
 {
-   "tabWidth": 3,
-   "useTabs": true,
-   "singleQuote": true,
-   "trailingComma": "none",
-   "jsxBracketSameLine": false,
-   "overrides": [
-      {
-         "files": ["*.ts"],
-         "options": {
-            "jsxBracketSameLine": true
-         }
-      }
-   ]
+	"tabWidth": 3,
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"jsxBracketSameLine": false,
+	"quoteProps": "consistent",
+	"overrides": [
+		{
+			"files": ["*.ts"],
+			"options": {
+				"jsxBracketSameLine": true
+			}
+		}
+	]
 }

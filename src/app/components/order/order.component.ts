@@ -20,11 +20,12 @@ export class OrderComponent {
 		private infoService: InfoService
 	) {
 		this.order = orderService.order;
+		this.orderService.orderChange.subscribe((o: Order) => (this.order = o));
 		this.orderService.itemEdit.subscribe((item: OrderItem) =>
 			this.onItemEditing(item)
 		);
-		this.orderService.orderChange.subscribe((o: Order) =>
-			this.onOrderChange(o)
+		this.orderService.itemsChange.subscribe((o: Order) =>
+			this.onItemsChange(o)
 		);
 		this.generateRandomInfo();
 	}
@@ -81,7 +82,7 @@ export class OrderComponent {
 		this.selectedIndex = this.order.items.indexOf(item);
 	}
 
-	private onOrderChange(order: Order): void {
+	private onItemsChange(order: Order): void {
 		this.order = order;
 		if (this.order.count === 0) {
 			this.generateRandomInfo();

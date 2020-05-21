@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { SearchItem } from '@app/components/search/models/search-item';
 import { MenuService } from '@app/services/menu.service';
 import { OrderService } from '@app/services/order.service';
@@ -8,6 +8,7 @@ import { WordStartsStrategy } from '@app/components/search/models/word-starts-st
 import { AcronymStrategy } from '@app/components/search/models/acronym-strategy';
 import { BurgerWordStrategy } from './models/burger-word-strategy';
 import { BurgerAcronymStrategy } from './models/burger-acronym-strategy';
+import { AddItemSearchComponent } from '@app/components/add-item-search/add-item-search.component';
 
 @Component({
 	selector: 'app-menu-search',
@@ -24,10 +25,13 @@ export class MenuSearchComponent {
 		new BurgerAcronymStrategy()
 	];
 
+	@ViewChild('search') search: AddItemSearchComponent;
+
 	constructor(
 		private menuService: MenuService,
 		private orderService: OrderService
 	) {
+		this.orderService.orderChange.subscribe(() => this.search.focus());
 		this.searchItems = this.getSearchItems();
 	}
 

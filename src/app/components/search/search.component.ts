@@ -108,6 +108,10 @@ export class SearchComponent {
 		this.searchElement.nativeElement.focus();
 	}
 
+	focus(): void {
+		this.searchElement.nativeElement.focus();
+	}
+
 	private leftTrim(s: string): string {
 		if (!s) return s;
 

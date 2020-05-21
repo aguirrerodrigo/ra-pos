@@ -8,16 +8,27 @@ import { OrderMenuMap } from './order-menu-map';
 	providedIn: 'root'
 })
 export class OrderService {
-	map = new OrderMenuMap();
-	order = new Order();
+	private map = new OrderMenuMap();
+	private _order = new Order();
 	orderChange = new EventEmitter<Order>();
+	itemsChange = new EventEmitter<Order>();
 	itemEdit = new EventEmitter<OrderItem>();
+
+	get order(): Order {
+		return this._order;
+	}
+
+	set order(value: Order) {
+		this.map = new OrderMenuMap();
+		this._order = value;
+		this.orderChange.emit(this._order);
+	}
 
 	editItem(orderItem: OrderItem): void {
 		this.itemEdit.emit(orderItem);
 	}
 
-	add(menuItem: MenuItem, quantity = 1): void {
+	add(menuItem: MenuItem, quantity: number = 1): void {
 		let orderItem: OrderItem;
 
 		if (this.map.hasMenuItem(menuItem)) {
@@ -31,7 +42,7 @@ export class OrderService {
 			this.order.add(orderItem);
 		}
 
-		this.orderChange.emit(this.order);
+		this.itemsChange.emit(this.order);
 	}
 
 	delete(orderItem: OrderItem): void {
@@ -39,7 +50,7 @@ export class OrderService {
 			this.map.deleteByOrderItem(orderItem);
 
 			this.order.delete(orderItem);
-			this.orderChange.emit(this.order);
+			this.itemsChange.emit(this.order);
 		}
 	}
 }

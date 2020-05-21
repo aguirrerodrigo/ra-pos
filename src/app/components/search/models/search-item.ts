@@ -9,7 +9,11 @@ export class SearchItem {
 		this.lowerSearchText = searchText.toLowerCase();
 	}
 
-	match(s: string, strategy: SearchStrategy, caseSensitive = false): boolean {
+	match(
+		s: string,
+		strategy: SearchStrategy,
+		caseSensitive: boolean = false
+	): boolean {
 		let found = false;
 
 		strategy.matches = [];

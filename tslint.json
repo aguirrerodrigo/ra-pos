@@ -6,7 +6,7 @@
 		"variable-name": {
 			"options": ["ban-keywords", "check-format", "allow-leading-underscore"]
 		},
-		"typedef": [true, "call-signature"],
+		"typedef": [true, "call-signature", "parameter"],
 		"typedef-whitespace": [
 			true,
 			{
@@ -53,7 +53,7 @@
 		"no-consecutive-blank-lines": false,
 		"no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
 		"no-empty": false,
-		"no-inferrable-types": [true],
+		"no-inferrable-types": [true, "ignore-params"],
 		"no-non-null-assertion": true,
 		"no-redundant-jsdoc": true,
 		"no-switch-case-fall-through": true,

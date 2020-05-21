@@ -1,7 +1,7 @@
 import { SearchStrategy } from '@app/components/search/models/search-strategy';
 
 export class BurgerWordStrategy extends SearchStrategy {
-	match(text: string, search: string) {
+	match(text: string, search: string): boolean {
 		if (!'burger'.startsWith(search.toLowerCase())) return false;
 
 		let burgerIndex = text.toLowerCase().indexOf('burger ');

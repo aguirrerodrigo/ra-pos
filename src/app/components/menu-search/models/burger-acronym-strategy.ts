@@ -7,7 +7,7 @@ export class BurgerAcronymStrategy extends SearchStrategy {
 	private text = '';
 	private search = '';
 
-	match(text: string, search: string) {
+	match(text: string, search: string): boolean {
 		this.burgerIndex = -1;
 		this.index = 0;
 		this.matchCount = 0;

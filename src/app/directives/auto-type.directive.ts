@@ -7,7 +7,7 @@ export class AutoTypeDirective {
 	constructor(private el: ElementRef) {}
 
 	@HostListener('window:keydown', ['$event'])
-	onWindowKeyDown(e: KeyboardEvent) {
+	onWindowKeyDown(e: KeyboardEvent): void {
 		if (!this.isValidKey(e.key) || !this.isBody(e.target)) {
 			return;
 		}
@@ -20,7 +20,7 @@ export class AutoTypeDirective {
 		return target.tagName.toLocaleLowerCase() === 'body';
 	}
 
-	private isValidKey(key: string) {
+	private isValidKey(key: string): boolean {
 		return (
 			key != null &&
 			key.length === 1 &&

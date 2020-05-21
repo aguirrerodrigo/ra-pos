@@ -29,7 +29,7 @@ export class ModalService {
 		return modal;
 	}
 
-	private isTouchDevice() {
+	private isTouchDevice(): boolean {
 		return 'ontouchstart' in document.documentElement;
 	}
 }

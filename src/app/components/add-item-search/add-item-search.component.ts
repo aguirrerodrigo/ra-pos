@@ -11,7 +11,7 @@ export class AddItemSearchComponent extends SearchComponent {
 	private formattedSearch = '';
 	quantity = 1;
 
-	get search() {
+	get search(): string {
 		return this.addItemSearch;
 	}
 
@@ -27,7 +27,7 @@ export class AddItemSearchComponent extends SearchComponent {
 		super();
 	}
 
-	private formatSearch() {
+	private formatSearch(): void {
 		this.quantity = 1;
 
 		let numbers = '';

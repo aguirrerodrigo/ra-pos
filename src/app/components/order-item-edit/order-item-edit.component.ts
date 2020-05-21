@@ -14,7 +14,7 @@ export class OrderItemEditComponent {
 	item: OrderItem;
 	quantity = 0;
 
-	get total() {
+	get total(): number {
 		return this.item.price * this.quantity;
 	}
 
@@ -27,21 +27,21 @@ export class OrderItemEditComponent {
 		this.orderService.itemEdit.subscribe((e) => this.show(e));
 	}
 
-	cancel() {
+	cancel(): void {
 		this.modal.dismiss();
 	}
 
-	delete() {
+	delete(): void {
 		this.orderService.delete(this.item);
 		this.modal.close();
 	}
 
-	save() {
+	save(): void {
 		this.item.quantity = this.quantity;
 		this.modal.close();
 	}
 
-	show(item: OrderItem) {
+	show(item: OrderItem): void {
 		this.item = item;
 		this.quantity = item.quantity;
 

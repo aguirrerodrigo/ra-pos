@@ -3,7 +3,7 @@ import { OrderItem } from './order-item';
 export class Order {
 	private set = new Set<OrderItem>();
 
-	get items() {
+	get items(): OrderItem[] {
 		return [...this.set];
 	}
 
@@ -25,13 +25,13 @@ export class Order {
 		return total;
 	}
 
-	add(item: OrderItem) {
+	add(item: OrderItem): void {
 		if (!this.set.has(item)) {
 			this.set.add(item);
 		}
 	}
 
-	delete(item: OrderItem) {
+	delete(item: OrderItem): void {
 		if (this.set.has(item)) {
 			this.set.delete(item);
 		}

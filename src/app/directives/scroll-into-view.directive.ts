@@ -6,7 +6,7 @@ import { Directive, Input, ElementRef } from '@angular/core';
 export class ScrollIntoViewDirective {
 	private _scroll = false;
 
-	get scroll() {
+	get scroll(): boolean {
 		return this._scroll;
 	}
 

@@ -42,7 +42,7 @@ export class MenuSearchComponent {
 		return result;
 	}
 
-	onSelect(searchItem: SearchItem, quantity: number) {
+	onSelect(searchItem: SearchItem, quantity: number): void {
 		this.orderService.add(searchItem.model, quantity);
 	}
 }

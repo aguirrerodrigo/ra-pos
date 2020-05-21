@@ -10,7 +10,7 @@ export class SelectOnFocusDirective {
 		});
 	}
 
-	private select() {
+	private select(): void {
 		setTimeout(() => this.el.nativeElement.select());
 	}
 }

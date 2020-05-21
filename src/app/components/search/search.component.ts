@@ -24,7 +24,7 @@ export class SearchComponent {
 	result: SearchItem[] = [];
 	selectedIndex = 0;
 
-	get search() {
+	get search(): string {
 		return this._search;
 	}
 
@@ -65,7 +65,7 @@ export class SearchComponent {
 
 	@Output() itemSelect = new EventEmitter<SearchItem>();
 
-	searchChange() {
+	searchChange(): void {
 		this.result = [...this.buffer];
 		this.selectedIndex = 0;
 	}
@@ -86,7 +86,7 @@ export class SearchComponent {
 		}
 	}
 
-	onEnterKey(e: KeyboardEvent) {
+	onEnterKey(e: KeyboardEvent): void {
 		e.preventDefault();
 
 		if (!this.result || this.result.length === 0) return;
@@ -95,7 +95,7 @@ export class SearchComponent {
 		this.search = '';
 	}
 
-	onEscKey(e: KeyboardEvent) {
+	onEscKey(e: KeyboardEvent): void {
 		e.preventDefault();
 
 		(e.target as HTMLInputElement).value = '';
@@ -108,7 +108,7 @@ export class SearchComponent {
 		this.searchElement.nativeElement.focus();
 	}
 
-	private leftTrim(s: string) {
+	private leftTrim(s: string): string {
 		if (!s) return s;
 
 		let index = 0;

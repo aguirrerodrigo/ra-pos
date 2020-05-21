@@ -6,7 +6,7 @@ export class AcronymStrategy extends SearchStrategy {
 	private text = '';
 	private search = '';
 
-	match(text: string, search: string) {
+	match(text: string, search: string): boolean {
 		this.index = 0;
 		this.matchCount = 0;
 		this.text = text;
@@ -15,7 +15,7 @@ export class AcronymStrategy extends SearchStrategy {
 		return this.doMatch();
 	}
 
-	private doMatch() {
+	private doMatch(): boolean {
 		if (this.search[0] === this.text[0]) {
 			this.matchCurrentWord();
 		}

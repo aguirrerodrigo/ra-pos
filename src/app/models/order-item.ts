@@ -6,7 +6,7 @@ export class OrderItem {
 	price = 0;
 	quantity = 1;
 
-	get total() {
+	get total(): number {
 		return this.price * this.quantity;
 	}
 

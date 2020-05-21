@@ -13,11 +13,11 @@ export class OrderService {
 	orderChange = new EventEmitter<Order>();
 	itemEdit = new EventEmitter<OrderItem>();
 
-	editItem(orderItem: OrderItem) {
+	editItem(orderItem: OrderItem): void {
 		this.itemEdit.emit(orderItem);
 	}
 
-	add(menuItem: MenuItem, quantity = 1) {
+	add(menuItem: MenuItem, quantity = 1): void {
 		let orderItem: OrderItem;
 
 		if (this.map.hasMenuItem(menuItem)) {
@@ -34,7 +34,7 @@ export class OrderService {
 		this.orderChange.emit(this.order);
 	}
 
-	delete(orderItem: OrderItem) {
+	delete(orderItem: OrderItem): void {
 		if (this.map.hasOrderItem(orderItem)) {
 			this.map.deleteByOrderItem(orderItem);
 

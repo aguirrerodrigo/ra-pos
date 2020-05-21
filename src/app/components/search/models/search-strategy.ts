@@ -8,7 +8,7 @@ export abstract class SearchStrategy {
 
 	abstract match(text: string, search: string): boolean;
 
-	protected addMatch(index: number, length: number) {
+	protected addMatch(index: number, length: number): void {
 		this.matches.push(new SearchMatch(index, length));
 	}
 

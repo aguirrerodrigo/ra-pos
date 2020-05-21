@@ -21,19 +21,19 @@ export class OrderMenuMap {
 		return this.orderMap.get(menuItem);
 	}
 
-	set(menuItem: MenuItem, orderItem: OrderItem) {
+	set(menuItem: MenuItem, orderItem: OrderItem): void {
 		this.menuMap.set(orderItem, menuItem);
 		this.orderMap.set(menuItem, orderItem);
 	}
 
-	deleteByOrderItem(orderItem: OrderItem) {
+	deleteByOrderItem(orderItem: OrderItem): void {
 		const menuItem = this.getMenuItem(orderItem);
 
 		this.menuMap.delete(orderItem);
 		this.orderMap.delete(menuItem);
 	}
 
-	deleteByMenuItem(menuItem: MenuItem) {
+	deleteByMenuItem(menuItem: MenuItem): void {
 		const orderItem = this.getOrderItem(menuItem);
 
 		this.orderMap.delete(menuItem);

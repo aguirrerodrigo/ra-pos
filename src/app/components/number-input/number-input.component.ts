@@ -11,7 +11,7 @@ export class NumberInputComponent {
 	@Input() min = 0;
 	@Input() max = 9999;
 
-	get value() {
+	get value(): number {
 		return this._value;
 	}
 
@@ -24,13 +24,13 @@ export class NumberInputComponent {
 
 	constructor() {}
 
-	increment() {
+	increment(): void {
 		if (this.value < this.max) {
 			this.value++;
 		}
 	}
 
-	decrement() {
+	decrement(): void {
 		if (this.value > this.min) {
 			this.value--;
 		}

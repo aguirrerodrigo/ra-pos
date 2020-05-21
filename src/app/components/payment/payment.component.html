@@ -1,47 +1,71 @@
-<div
-	class="payment-container"
-	[ngClass]="{
-		danger: order.total > cashValue,
-		success: order.total <= cashValue
-	}"
->
-	<div class="item">
+<div class="payment-container">
+	<div class="total-container">
 		<div class="label">Total</div>
-		<div class="currency">
+		<div class="value">
 			{{ order.total | currency: 'PH':'P ':'1.2-2' }}
 		</div>
 	</div>
-	<div class="item">
+	<div class="discount-container">
+		<div class="label">Discount</div>
+		<div class="value">
+			<input
+				class="discount"
+				appSelectOnFocus
+				[(ngModel)]="discount"
+				(focus)="formatDiscountToValue()"
+				(focusout)="formatDiscount()"
+			/>
+		</div>
+	</div>
+	<div class="after-discount-container">
+		<div class="label">After discount</div>
+		<div class="value">
+			{{ afterDiscount | currency: 'PH':'P ':'1.2-2' }}
+		</div>
+	</div>
+	<div
+		class="cash-container"
+		[ngClass]="{
+			danger: afterDiscount > cashValue,
+			success: afterDiscount <= cashValue
+		}"
+	>
 		<div class="label">Cash</div>
-		<div class="currency">
+		<div class="value">
 			<input
 				appSelectOnFocus
 				class="cash"
 				[ngClass]="{
-					danger: order.total > cashValue,
-					success: order.total <= cashValue
+					danger: afterDiscount > cashValue,
+					success: afterDiscount <= cashValue
 				}"
 				[(ngModel)]="cash"
-				(focus)="toValue()"
-				(focusout)="toFormattedText()"
+				(focus)="formatCashToValue()"
+				(focusout)="formatCash()"
 			/>
 		</div>
 	</div>
-	<div class="item">
+	<div
+		class="change-container"
+		[ngClass]="{
+			danger: afterDiscount > cashValue,
+			success: afterDiscount <= cashValue
+		}"
+	>
 		<div class="label">Change</div>
-		<div class="currency">
+		<div class="value">
 			{{ change | currency: 'PH':'P ':'1.2-2' }}
 		</div>
 	</div>
 </div>
-<div class="mt-2 float-right">
+<div class="checkout-container">
 	<button
 		class="checkout"
 		[ngClass]="{
-			danger: order.total > cashValue,
-			success: order.total <= cashValue
+			'checkout-danger': afterDiscount > cashValue,
+			'checkout-success': afterDiscount <= cashValue
 		}"
-		[disabled]="order.total > cashValue ? true : null"
+		[disabled]="afterDiscount > cashValue ? true : null"
 	>
 		Checkout
 	</button>

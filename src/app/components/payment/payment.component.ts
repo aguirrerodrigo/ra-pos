@@ -10,11 +10,38 @@ import { CurrencyPipe } from '@angular/common';
 	providers: [CurrencyPipe]
 })
 export class PaymentComponent {
+	private _discount: string;
+	private _discountInPercentage = false;
 	private _cash: string;
 	order: Order;
+	discountValue = 0;
 	cashValue = 0;
 
-	get cash() {
+	get discount(): string {
+		return this._discount;
+	}
+
+	set discount(value: string) {
+		this._discountInPercentage = value.endsWith('%');
+		if (this._discountInPercentage) {
+			value = value.substr(value.length - 1);
+		}
+
+		const n = Number(value);
+		if (!isNaN(n)) {
+			this.discountValue = Math.abs(n);
+		}
+	}
+
+	get afterDiscount(): number {
+		if (this._discountInPercentage) {
+			return (1 - this.discountValue / 100) * this.order.total;
+		} else {
+			return this.order.total - this.discountValue;
+		}
+	}
+
+	get cash(): string {
 		return this._cash;
 	}
 
@@ -26,7 +53,7 @@ export class PaymentComponent {
 	}
 
 	get change(): number {
-		return this.cashValue - this.order.total;
+		return this.cashValue - this.afterDiscount;
 	}
 
 	constructor(
@@ -34,22 +61,35 @@ export class PaymentComponent {
 		private currency: CurrencyPipe
 	) {
 		this.order = orderService.order;
+		this._discount = this.format(this.discountValue);
 		this._cash = this.format(this.cashValue);
 	}
 
-	private format(n: number) {
-		return this.currency.transform(n, 'PH', 'P ', '1.2-2');
+	formatDiscountToValue(): void {
+		this._discount = this.discountValue.toString();
 	}
 
-	toValue(): void {
+	formatDiscount(): void {
+		if (this._discountInPercentage) {
+			this._discount = `${-this.discountValue} %`;
+		} else {
+			this._discount = this.format(-this.discountValue);
+		}
+	}
+
+	formatCashToValue(): void {
 		this._cash = this.cashValue.toString();
 	}
 
-	toFormattedText(): void {
+	formatCash(): void {
 		this._cash = this.format(this.cashValue);
 	}
 
 	checkout(): void {
 		this.orderService.order = new Order();
+	}
+
+	private format(n: number): string {
+		return this.currency.transform(n, 'PH', 'P ', '1.2-2');
 	}
 }

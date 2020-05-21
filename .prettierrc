@@ -5,6 +5,7 @@
 	"trailingComma": "none",
 	"jsxBracketSameLine": false,
 	"quoteProps": "consistent",
+	"arrowParens": "always",
 	"overrides": [
 		{
 			"files": ["*.ts"],

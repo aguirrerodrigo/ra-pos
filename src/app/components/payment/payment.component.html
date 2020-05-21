@@ -2,7 +2,7 @@
 	<div class="total-container">
 		<div class="label">Total</div>
 		<div class="value">
-			{{ order.total | currency: 'PH':'P ':'1.2-2' }}
+			{{ order.total | php }}
 		</div>
 	</div>
 	<div class="discount-container">
@@ -20,7 +20,7 @@
 	<div class="after-discount-container">
 		<div class="label">After discount</div>
 		<div class="value">
-			{{ afterDiscount | currency: 'PH':'P ':'1.2-2' }}
+			{{ afterDiscount | php }}
 		</div>
 	</div>
 	<div
@@ -54,7 +54,7 @@
 	>
 		<div class="label">Change</div>
 		<div class="value">
-			{{ change | currency: 'PH':'P ':'1.2-2' }}
+			{{ change | php }}
 		</div>
 	</div>
 </div>

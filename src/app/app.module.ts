@@ -26,6 +26,8 @@ import { AutoTypeDirective } from './directives/auto-type.directive';
 import { ScrollIntoViewDirective } from './directives/scroll-into-view.directive';
 import { SelectOnFocusDirective } from './directives/select-on-focus.directive';
 
+import { PhpCurrencyPipe } from './pipes/php-currency.pipe';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -40,7 +42,8 @@ import { SelectOnFocusDirective } from './directives/select-on-focus.directive';
 
 		AutoTypeDirective,
 		ScrollIntoViewDirective,
-		SelectOnFocusDirective
+		SelectOnFocusDirective,
+		PhpCurrencyPipe
 	],
 	imports: [
 		BrowserModule,

@@ -6,10 +6,10 @@
 		<small>{{ item?.description }}</small>
 	</div>
 	<div class="total">
-		{{ item?.total | currency: 'PH':'P ':'1.2-2' }}
+		{{ item?.total | php }}
 	</div>
 	<div class="unit-price">
-		<small>{{ item?.price | currency: 'PH':'P ':'1.2-2' }}</small>
+		<small>{{ item?.price | php }}</small>
 	</div>
 	<div class="quantity">
 		{{ item?.quantity }}

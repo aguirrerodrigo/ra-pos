@@ -2,8 +2,7 @@
 	<div class="header">
 		<h4 class="title">{{ item.name }}</h4>
 		<h4 class="total">
-			<span class="total-label">Total:&nbsp;</span
-			>{{ total | currency: 'PH':'P ':'1.2-2' }}
+			<span class="total-label">Total:&nbsp;</span>{{ total | php }}
 		</h4>
 	</div>
 	<div class="body">
@@ -12,7 +11,7 @@
 				{{ item.description }}
 			</div>
 			<div class="price">
-				{{ item.price | currency: 'PH':'P ':'1.2-2' }}
+				{{ item.price | php }}
 			</div>
 		</div>
 		<app-number-input

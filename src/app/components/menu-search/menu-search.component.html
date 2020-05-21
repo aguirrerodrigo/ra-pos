@@ -11,7 +11,7 @@
 			<div class="description">{{ item.model.description }}</div>
 		</div>
 		<div class="price">
-			{{ item.model.price | currency: 'PH':'P ':'1.2-2' }}
+			{{ item.model.price | php }}
 		</div>
 	</ng-template>
 </app-add-item-search>

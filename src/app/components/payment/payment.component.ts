@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { Order } from '@app/models/order';
 import { OrderService } from '@app/services/order.service';
-import { CurrencyPipe } from '@angular/common';
+import { formatPhpCurrency } from '@app/utils';
 
 @Component({
 	selector: 'app-payment',
 	templateUrl: './payment.component.html',
-	styleUrls: ['./payment.component.scss'],
-	providers: [CurrencyPipe]
+	styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent {
 	private _discount: string;
@@ -56,22 +55,23 @@ export class PaymentComponent {
 		return this.cashValue - this.afterDiscount;
 	}
 
-	constructor(
-		private orderService: OrderService,
-		private currency: CurrencyPipe
-	) {
+	constructor(private orderService: OrderService) {
 		this.order = orderService.order;
 		this._discount = this.format(this.discountValue);
 		this._cash = this.format(this.cashValue);
 	}
 
 	formatDiscountToValue(): void {
-		this._discount = this.discountValue.toString();
+		this._discount =
+			this.discountValue.toString() +
+			(this._discountInPercentage ? '%' : '');
 	}
 
 	formatDiscount(): void {
 		if (this._discountInPercentage) {
-			this._discount = `${-this.discountValue} %`;
+			this._discount = `(-${this.discountValue} %)  ${this.format(
+				-this.order.total + this.afterDiscount
+			)}`;
 		} else {
 			this._discount = this.format(-this.discountValue);
 		}
@@ -90,6 +90,6 @@ export class PaymentComponent {
 	}
 
 	private format(n: number): string {
-		return this.currency.transform(n, 'PH', 'P ', '1.2-2');
+		return formatPhpCurrency(n);
 	}
 }

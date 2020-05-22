@@ -8,5 +8,6 @@
 	"While the order list is highlighted, you can scroll through the items in the order using the up and arrow keys.",
 	"You can delete a highlighted item by pressing the [Delete] key.",
 	"You can increase or decrease the quantity of a highlighted order by using the left and right keys.",
-	"Pressing [Enter] on a highlighted order will show the edit window."
+	"Pressing [Enter] on a highlighted order will show the edit window.",
+	"End discount with '%' to apply percentage discount."
 ]

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { OrderService } from '@app/services/order.service';
 import { InfoService } from '@app/services/info.service';
 import { Order } from '@app/models/order';
 import { OrderItem } from '@app/models/order-item';
+import { OrderItemComponent } from '../order-item/order-item.component';
 
 @Component({
 	selector: 'app-order',
@@ -14,6 +15,9 @@ export class OrderComponent {
 	randomInfo = '';
 	order: Order;
 	selectedIndex = 0;
+
+	@ViewChildren(OrderItemComponent, { read: ElementRef })
+	orderItems: QueryList<ElementRef>;
 
 	constructor(
 		private orderService: OrderService,
@@ -30,23 +34,33 @@ export class OrderComponent {
 		this.generateRandomInfo();
 	}
 
-	onArrowUpKey(): void {
+	onArrowUpKey(e: KeyboardEvent): void {
+		e.preventDefault();
+
 		if (this.selectedIndex > 0) {
 			this.selectedIndex--;
+			this.scrollItemIntoView();
 		}
 	}
 
-	onArrowDownKey(): void {
+	onArrowDownKey(e: KeyboardEvent): void {
+		e.preventDefault();
+
 		if (this.selectedIndex < this.order.items.length - 1) {
 			this.selectedIndex++;
+			this.scrollItemIntoView();
 		}
 	}
 
-	onEnterKey(): void {
+	onEnterKey(e: KeyboardEvent): void {
+		e.preventDefault();
+
 		this.orderService.editItem(this.order.items[this.selectedIndex]);
 	}
 
-	onArrowLeftKey(): void {
+	onArrowLeftKey(e: KeyboardEvent): void {
+		e.preventDefault();
+
 		if (this.order.items.length === 0) return;
 
 		const item = this.order.items[this.selectedIndex];
@@ -55,7 +69,9 @@ export class OrderComponent {
 		}
 	}
 
-	onArrowRightKey(): void {
+	onArrowRightKey(e: KeyboardEvent): void {
+		e.preventDefault();
+
 		if (this.order.items.length === 0) return;
 
 		const item = this.order.items[this.selectedIndex];
@@ -64,7 +80,9 @@ export class OrderComponent {
 		}
 	}
 
-	onDeleteKey(): void {
+	onDeleteKey(e: KeyboardEvent): void {
+		e.preventDefault();
+
 		const item = this.order.items[this.selectedIndex];
 		this.orderService.delete(item);
 
@@ -91,5 +109,23 @@ export class OrderComponent {
 
 	private generateRandomInfo(): void {
 		this.randomInfo = this.infoService.getRandomInfo();
+	}
+
+	private scrollItemIntoView(): void {
+		const item = this.orderItems.toArray()[this.selectedIndex];
+
+		if (!this.itemInView(item)) {
+			item.nativeElement.scrollIntoView(false);
+		}
+	}
+
+	private itemInView(el: ElementRef): boolean {
+		const rect = el.nativeElement.getBoundingClientRect();
+		const elemTop = rect.top;
+		const elemBottom = rect.bottom;
+
+		// Only completely visible elements return true:
+		const isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
+		return isVisible;
 	}
 }

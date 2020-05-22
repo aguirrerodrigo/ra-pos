@@ -1,12 +1,12 @@
 <div
 	class="order-container"
 	tabindex="0"
-	(keydown.arrowup)="onArrowUpKey()"
-	(keydown.arrowdown)="onArrowDownKey()"
-	(keydown.enter)="onEnterKey()"
-	(keydown.arrowleft)="onArrowLeftKey()"
-	(keydown.arrowright)="onArrowRightKey()"
-	(keydown.delete)="onDeleteKey()"
+	(keydown.arrowup)="onArrowUpKey($event)"
+	(keydown.arrowdown)="onArrowDownKey($event)"
+	(keydown.enter)="onEnterKey($event)"
+	(keydown.arrowleft)="onArrowLeftKey($event)"
+	(keydown.arrowright)="onArrowRightKey($event)"
+	(keydown.delete)="onDeleteKey($event)"
 >
 	<div class="header">
 		<div class="title">
@@ -37,7 +37,6 @@
 		</div>
 		<app-order-item
 			class="item"
-			[appScrollIntoView]="i === selectedIndex"
 			[class.selected]="i === selectedIndex"
 			*ngFor="let item of order?.items; let i = index"
 			[item]="item"

@@ -12,12 +12,10 @@
 				(keydown.arrowup)="onArrowUpKey($event)"
 				(keyup.enter)="onEnterKey($event)"
 				(keyup.esc)="onEscKey($event)"
-				(focus)="showItems = true"
-				(focusout)="showItems = false"
 				autofocus
 			/>
 		</div>
-		<ul *ngIf="showItems && result.length > 0" class="list">
+		<ul *ngIf="result.length > 0" class="list">
 			<li
 				class="item"
 				(click)="onItemClick(item)"

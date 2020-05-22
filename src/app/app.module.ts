@@ -43,6 +43,7 @@ import { PhpCurrencyPipe } from './pipes/php-currency.pipe';
 		AutoTypeDirective,
 		ScrollIntoViewDirective,
 		SelectOnFocusDirective,
+
 		PhpCurrencyPipe
 	],
 	imports: [

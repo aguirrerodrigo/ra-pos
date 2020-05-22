@@ -15,15 +15,15 @@ export class AddItemSearchComponent extends SearchComponent {
 	quantity = 1;
 
 	get result(): SearchResultItem[] {
-		if (!isNullOrWhiteSpace(this.formattedSearch)) {
-			return [...super.result, this.miscItem(this.formattedSearch)];
-		} else {
-			return super.result;
-		}
+		return super.result;
 	}
 
 	set result(value: SearchResultItem[]) {
-		super.result = value;
+		if (!isNullOrWhiteSpace(this.formattedSearch)) {
+			super.result = [...value, this.miscItem(this.formattedSearch)];
+		} else {
+			super.result = value;
+		}
 	}
 
 	miscItem(name: string): SearchResultItem {

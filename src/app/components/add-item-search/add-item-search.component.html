@@ -12,15 +12,10 @@
 				(keydown.arrowup)="onArrowUpKey($event)"
 				(keyup.enter)="onEnterKey($event)"
 				(keyup.esc)="onEscKey($event)"
-				(focus)="showItems = true"
-				(focusout)="showItems = false"
 				autofocus
 			/>
 		</div>
-		<div
-			*ngIf="showItems && (quantity > 1 || result.length > 0)"
-			class="result"
-		>
+		<div *ngIf="quantity > 1 || result.length > 0" class="result">
 			<div *ngIf="quantity > 1" class="result-header">
 				<strong>{{ quantity }}</strong> items of<span
 					*ngIf="result.length <= 0"

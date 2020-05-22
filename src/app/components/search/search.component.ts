@@ -23,7 +23,6 @@ export class SearchComponent {
 	private _search = '';
 	private buffer = new Set<SearchItem>();
 	_result: SearchResultItem[] = [];
-	showItems = false;
 	selectedIndex = 0;
 
 	get result(): SearchResultItem[] {

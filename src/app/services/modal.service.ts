@@ -20,7 +20,7 @@ export class ModalService {
 		});
 
 		const fx = (modal as any)._removeModalElements.bind(modal);
-		(modal as any)._removeModalElements = () => {
+		(modal as any)._removeModalElements = (): void => {
 			backdropElem.classList.remove('animate');
 			modalElem.classList.remove('animate');
 			setTimeout(fx, 250);

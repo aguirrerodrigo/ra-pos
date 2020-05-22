@@ -20,7 +20,7 @@ export class NumberInputComponent {
 		this.valueChange.emit(this._value);
 	}
 
-	@Output() valueChange = new EventEmitter<number>();
+	@Output() readonly valueChange = new EventEmitter<number>();
 
 	constructor() {}
 

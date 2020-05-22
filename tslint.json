@@ -6,7 +6,13 @@
 		"variable-name": {
 			"options": ["ban-keywords", "check-format", "allow-leading-underscore"]
 		},
-		"typedef": [true, "call-signature", "parameter"],
+		"typedef": [
+			true,
+			"call-signature",
+			"arrow-call-signature",
+			"parameter",
+			"arrow-parameter"
+		],
 		"typedef-whitespace": [
 			true,
 			{

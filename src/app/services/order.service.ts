@@ -10,9 +10,9 @@ import { OrderMenuMap } from './order-menu-map';
 export class OrderService {
 	private map = new OrderMenuMap();
 	private _order = new Order();
-	orderChange = new EventEmitter<Order>();
-	itemsChange = new EventEmitter<Order>();
-	itemEdit = new EventEmitter<OrderItem>();
+	readonly orderChange = new EventEmitter<Order>();
+	readonly orderUpdate = new EventEmitter<Order>();
+	readonly itemEdit = new EventEmitter<OrderItem>();
 
 	get order(): Order {
 		return this._order;
@@ -22,10 +22,6 @@ export class OrderService {
 		this.map = new OrderMenuMap();
 		this._order = value;
 		this.orderChange.emit(this._order);
-	}
-
-	editItem(orderItem: OrderItem): void {
-		this.itemEdit.emit(orderItem);
 	}
 
 	add(menuItem: MenuItem, quantity: number = 1): void {
@@ -42,7 +38,7 @@ export class OrderService {
 			this.order.add(orderItem);
 		}
 
-		this.itemsChange.emit(this.order);
+		this.orderUpdate.emit(this.order);
 	}
 
 	delete(orderItem: OrderItem): void {
@@ -50,7 +46,7 @@ export class OrderService {
 			this.map.deleteByOrderItem(orderItem);
 
 			this.order.delete(orderItem);
-			this.itemsChange.emit(this.order);
+			this.orderUpdate.emit(this.order);
 		}
 	}
 }

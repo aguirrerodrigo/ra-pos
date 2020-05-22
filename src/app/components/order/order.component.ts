@@ -3,7 +3,7 @@ import { OrderService } from '@app/services/order.service';
 import { InfoService } from '@app/services/info.service';
 import { Order } from '@app/models/order';
 import { OrderItem } from '@app/models/order-item';
-import { OrderItemComponent } from '../order-item/order-item.component';
+import { OrderItemComponent } from '@app/components/order-item/order-item.component';
 
 @Component({
 	selector: 'app-order',
@@ -26,10 +26,10 @@ export class OrderComponent {
 		this.order = orderService.order;
 		this.orderService.orderChange.subscribe((o: Order) => (this.order = o));
 		this.orderService.itemEdit.subscribe((item: OrderItem) =>
-			this.onItemEditing(item)
+			this.onItemEdit(item)
 		);
-		this.orderService.itemsChange.subscribe((o: Order) =>
-			this.onItemsChange(o)
+		this.orderService.orderUpdate.subscribe((o: Order) =>
+			this.onOrderUpdate(o)
 		);
 		this.generateRandomInfo();
 	}
@@ -55,7 +55,7 @@ export class OrderComponent {
 	onEnterKey(e: KeyboardEvent): void {
 		e.preventDefault();
 
-		this.orderService.editItem(this.order.items[this.selectedIndex]);
+		this.orderService.itemEdit.emit(this.order.items[this.selectedIndex]);
 	}
 
 	onArrowLeftKey(e: KeyboardEvent): void {
@@ -66,6 +66,8 @@ export class OrderComponent {
 		const item = this.order.items[this.selectedIndex];
 		if (item.quantity > 1) {
 			item.quantity--;
+
+			this.orderService.orderUpdate.emit(this.order);
 		}
 	}
 
@@ -77,6 +79,8 @@ export class OrderComponent {
 		const item = this.order.items[this.selectedIndex];
 		if (item.quantity < 9999) {
 			item.quantity++;
+
+			this.orderService.orderUpdate.emit(this.order);
 		}
 	}
 
@@ -93,15 +97,14 @@ export class OrderComponent {
 	}
 
 	editItem(item: OrderItem): void {
-		this.orderService.editItem(item);
+		this.orderService.itemEdit.emit(item);
 	}
 
-	private onItemEditing(item: OrderItem): void {
+	private onItemEdit(item: OrderItem): void {
 		this.selectedIndex = this.order.items.indexOf(item);
 	}
 
-	private onItemsChange(order: Order): void {
-		this.order = order;
+	private onOrderUpdate(order: Order): void {
 		if (this.order.count === 0) {
 			this.generateRandomInfo();
 		}

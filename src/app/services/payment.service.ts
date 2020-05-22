@@ -8,7 +8,8 @@ import { Order } from '@app/models/order';
 })
 export class PaymentService {
 	private _payment: Payment;
-	paymentChange = new EventEmitter<Payment>();
+	readonly paymentChange = new EventEmitter<Payment>();
+	readonly paymentUpdate = new EventEmitter<Payment>();
 
 	get payment(): Payment {
 		return this._payment;
@@ -20,8 +21,11 @@ export class PaymentService {
 	}
 
 	constructor(private orderService: OrderService) {
-		orderService.orderChange.subscribe(
+		this.orderService.orderChange.subscribe(
 			(o: Order) => (this.payment = new Payment(this.orderService.order))
+		);
+		this.orderService.orderUpdate.subscribe((o: Order) =>
+			this.paymentUpdate.emit(this._payment)
 		);
 		this.payment = new Payment(orderService.order);
 	}

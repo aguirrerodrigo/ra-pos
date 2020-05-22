@@ -24,7 +24,7 @@ export class OrderItemEditComponent {
 		private orderService: OrderService,
 		private modalService: ModalService
 	) {
-		this.orderService.itemEdit.subscribe((e) => this.show(e));
+		this.orderService.itemEdit.subscribe((i: OrderItem) => this.show(i));
 	}
 
 	cancel(): void {
@@ -39,6 +39,8 @@ export class OrderItemEditComponent {
 	save(): void {
 		this.item.quantity = this.quantity;
 		this.modal.close();
+
+		this.orderService.orderUpdate.emit();
 	}
 
 	show(item: OrderItem): void {

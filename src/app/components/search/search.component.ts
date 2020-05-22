@@ -63,7 +63,7 @@ export class SearchComponent {
 	@Input() caseSensitive = false;
 	@Input() items: SearchItem[] = [];
 
-	@Output() itemSelect = new EventEmitter<SearchItem>();
+	@Output() readonly itemSelect = new EventEmitter<SearchItem>();
 
 	searchChange(): void {
 		this.result = [...this.buffer];

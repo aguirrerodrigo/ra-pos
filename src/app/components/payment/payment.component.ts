@@ -44,6 +44,9 @@ export class PaymentComponent {
 		this.paymentService.paymentChange.subscribe((p: Payment) =>
 			this.setPayment(p)
 		);
+		this.paymentService.paymentUpdate.subscribe((p: Payment) =>
+			this.setPayment(p)
+		);
 		this.setPayment(this.paymentService.payment);
 	}
 

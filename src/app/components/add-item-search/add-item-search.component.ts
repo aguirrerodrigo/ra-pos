@@ -38,6 +38,8 @@ export class AddItemSearchComponent extends SearchComponent {
 
 		if (isNullOrWhiteSpace(name)) {
 			name = 'Miscellaneous Item';
+		} else {
+			name = name.trim();
 		}
 
 		return {

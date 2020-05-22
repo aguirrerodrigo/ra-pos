@@ -12,6 +12,7 @@ import { SearchItem } from './models/search-item';
 import { TextStartsStrategy } from './models/text-starts-strategy';
 import { WordStartsStrategy } from './models/word-starts-strategy';
 import { AcronymStrategy } from './models/acronym-strategy';
+import { SearchResultItem } from './models/search-result-item';
 
 @Component({
 	selector: 'app-search',
@@ -21,8 +22,17 @@ import { AcronymStrategy } from './models/acronym-strategy';
 export class SearchComponent {
 	private _search = '';
 	private buffer = new Set<SearchItem>();
-	result: SearchItem[] = [];
+	_result: SearchResultItem[] = [];
+	showItems = false;
 	selectedIndex = 0;
+
+	get result(): SearchResultItem[] {
+		return this._result;
+	}
+
+	set result(value: SearchResultItem[]) {
+		this._result = value;
+	}
 
 	get search(): string {
 		return this._search;
@@ -47,12 +57,14 @@ export class SearchComponent {
 				}
 			}
 		}
-		this.result = [...this.buffer];
+		this.result = this.createResult(this.buffer);
 		this.selectedIndex = 0;
 	}
 
 	@ViewChild('searchInput') searchElement: ElementRef;
-	@ContentChild(TemplateRef) searchItemTemplate: TemplateRef<SearchItem>;
+	@ContentChild(TemplateRef) searchResultTemplate: TemplateRef<
+		SearchResultItem
+	>;
 
 	@Input() searchStrategies = [
 		new TextStartsStrategy(),
@@ -63,12 +75,7 @@ export class SearchComponent {
 	@Input() caseSensitive = false;
 	@Input() items: SearchItem[] = [];
 
-	@Output() readonly itemSelect = new EventEmitter<SearchItem>();
-
-	searchChange(): void {
-		this.result = [...this.buffer];
-		this.selectedIndex = 0;
-	}
+	@Output() readonly itemSelect = new EventEmitter<SearchResultItem>();
 
 	onArrowDownKey(e: KeyboardEvent): void {
 		e.preventDefault();
@@ -102,14 +109,26 @@ export class SearchComponent {
 		this.search = '';
 	}
 
-	onItemClick(searchItem: SearchItem): void {
-		this.itemSelect.emit(searchItem);
+	onItemClick(item: SearchResultItem): void {
+		this.itemSelect.emit(item);
 		this.search = '';
 		this.searchElement.nativeElement.focus();
 	}
 
 	focus(): void {
 		this.searchElement.nativeElement.focus();
+	}
+
+	private createResult(items: Set<SearchItem>): SearchResultItem[] {
+		const result: SearchResultItem[] = [];
+		for (const item of items) {
+			result.push({
+				display: item.formattedText,
+				model: item.model
+			});
+		}
+
+		return result;
 	}
 
 	private leftTrim(s: string): string {

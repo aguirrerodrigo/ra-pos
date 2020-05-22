@@ -5,9 +5,9 @@
 	[searchStrategies]="searchStrategies"
 	(itemSelect)="onSelect($event, search.quantity)"
 >
-	<ng-template class="search-item-template" let-item>
+	<ng-template class="search-result-template" let-item>
 		<div class="title">
-			<div class="name" [innerHTML]="item.formattedText"></div>
+			<div class="name" [innerHTML]="item.display"></div>
 			<div class="description">{{ item.model.description }}</div>
 		</div>
 		<div class="price">

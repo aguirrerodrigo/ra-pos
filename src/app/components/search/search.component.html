@@ -12,21 +12,23 @@
 				(keydown.arrowup)="onArrowUpKey($event)"
 				(keyup.enter)="onEnterKey($event)"
 				(keyup.esc)="onEscKey($event)"
+				(focus)="showItems = true"
+				(focusout)="showItems = false"
 				autofocus
 			/>
 		</div>
-		<ul class="list">
+		<ul *ngIf="showItems && result.length > 0" class="list">
 			<li
-				(click)="onItemClick(item)"
 				class="item"
+				(click)="onItemClick(item)"
 				[class.selected]="i === selectedIndex"
 				[appScrollIntoView]="i === selectedIndex"
 				*ngFor="let item of result; index as i"
 			>
 				<ng-container
-					select=".search-item-template"
+					select=".search-result-template"
 					*ngTemplateOutlet="
-						searchItemTemplate;
+						searchResultTemplate;
 						context: { $implicit: item }
 					"
 				>

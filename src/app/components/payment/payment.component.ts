@@ -12,6 +12,11 @@ export class PaymentComponent {
 	private _discount: string;
 	private _cash: string;
 	payment: Payment;
+	confirm = false;
+
+	get canPay(): boolean {
+		return this.payment.afterDiscount <= this.payment.cash;
+	}
 
 	get discount(): string {
 		return this._discount;
@@ -28,6 +33,8 @@ export class PaymentComponent {
 		if (!isNaN(n)) {
 			this.payment.discount.value = Math.abs(n);
 		}
+
+		this.confirm = false;
 	}
 
 	get cash(): string {
@@ -40,6 +47,8 @@ export class PaymentComponent {
 		if (!isNaN(n)) {
 			this.payment.cash = n;
 		}
+
+		this.confirm = false;
 	}
 
 	constructor(private paymentService: PaymentService) {
@@ -77,7 +86,12 @@ export class PaymentComponent {
 	}
 
 	checkout(): void {
-		this.paymentService.checkout();
+		if (!this.confirm) {
+			this.confirm = true;
+		} else {
+			this.paymentService.checkout();
+			this.confirm = false;
+		}
 	}
 
 	private setPayment(payment: Payment): void {
@@ -85,5 +99,7 @@ export class PaymentComponent {
 
 		this.formatDiscount();
 		this.formatCash();
+
+		this.confirm = false;
 	}
 }

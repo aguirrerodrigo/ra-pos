@@ -26,8 +26,8 @@
 	<div
 		class="cash-container"
 		[ngClass]="{
-			danger: payment.afterDiscount > payment.cash,
-			success: payment.afterDiscount <= payment.cash
+			danger: !canPay,
+			success: canPay
 		}"
 	>
 		<div class="label">Cash</div>
@@ -36,8 +36,8 @@
 				class="cash"
 				appSelectOnFocus="delay-always"
 				[ngClass]="{
-					danger: payment.afterDiscount > payment.cash,
-					success: payment.afterDiscount <= payment.cash
+					danger: !canPay,
+					success: canPay
 				}"
 				[(ngModel)]="cash"
 				(focus)="formatCashFromValue()"
@@ -48,8 +48,8 @@
 	<div
 		class="change-container"
 		[ngClass]="{
-			danger: payment.afterDiscount > payment.cash,
-			success: payment.afterDiscount <= payment.cash
+			danger: !canPay,
+			success: canPay
 		}"
 	>
 		<div class="label">Change</div>
@@ -59,13 +59,20 @@
 	</div>
 </div>
 <div class="checkout-container">
+	<ng-container *ngIf="confirm">
+		Sure?
+		<button class="cancel" (click)="confirm = false">
+			Cancel
+		</button>
+	</ng-container>
 	<button
 		class="checkout"
 		[ngClass]="{
-			'checkout-danger': payment.afterDiscount > payment.cash,
-			'checkout-success': payment.afterDiscount <= payment.cash
+			'checkout-danger': !canPay,
+			'checkout-success': canPay && !confirm,
+			'checkout-primary': canPay && confirm
 		}"
-		[disabled]="payment.afterDiscount > payment.cash ? true : null"
+		[disabled]="!canPay ? true : null"
 		(click)="checkout()"
 	>
 		Checkout

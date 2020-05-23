@@ -78,11 +78,15 @@
 }
 
 .checkout-container {
-	@extend .mt-2, .float-right;
+	@extend .m-4, .float-right;
+}
+
+.cancel {
+	@extend .btn, .btn-light, .ml-1;
 }
 
 .checkout {
-	@extend .btn, .m-3;
+	@extend .btn, .ml-1;
 }
 
 .checkout-danger {
@@ -91,4 +95,8 @@
 
 .checkout-success {
 	@extend .btn-success;
+}
+
+.checkout-primary {
+	@extend .btn-primary;
 }

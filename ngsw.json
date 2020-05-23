@@ -1,0 +1,86 @@
+{
+  "configVersion": 1,
+  "timestamp": 1590252324034,
+  "index": "/ra-pos/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ra-pos/favicon.ico",
+        "/ra-pos/index.html",
+        "/ra-pos/main-es2015.9523739edf075aa91965.js",
+        "/ra-pos/main-es5.9523739edf075aa91965.js",
+        "/ra-pos/manifest.webmanifest",
+        "/ra-pos/polyfills-es2015.d630f8d8d2f25c0ddc79.js",
+        "/ra-pos/polyfills-es5.d33101a7d00db04ac139.js",
+        "/ra-pos/runtime-es2015.0811dcefd377500b5b1a.js",
+        "/ra-pos/runtime-es5.0811dcefd377500b5b1a.js",
+        "/ra-pos/styles.352bf5d1762abe5b769b.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ra-pos/assets/icons/icon-128x128.png",
+        "/ra-pos/assets/icons/icon-144x144.png",
+        "/ra-pos/assets/icons/icon-152x152.png",
+        "/ra-pos/assets/icons/icon-192x192.png",
+        "/ra-pos/assets/icons/icon-384x384.png",
+        "/ra-pos/assets/icons/icon-512x512.png",
+        "/ra-pos/assets/icons/icon-72x72.png",
+        "/ra-pos/assets/icons/icon-96x96.png",
+        "/ra-pos/assets/json/conjunctions.json",
+        "/ra-pos/assets/json/info.json",
+        "/ra-pos/assets/json/menu.json"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/ra-pos/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/ra-pos/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/ra-pos/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/ra-pos/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/ra-pos/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/ra-pos/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/ra-pos/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/ra-pos/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/ra-pos/assets/json/conjunctions.json": "c96b2f5ab67a88677caa8ad7a987eb6219749da7",
+    "/ra-pos/assets/json/info.json": "2e22abe55f5bda3e53cdf8874b5688aa1840c796",
+    "/ra-pos/assets/json/menu.json": "cd965d70c23277750cd193ff583bdbd92e74bc2e",
+    "/ra-pos/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/ra-pos/index.html": "dc16be3bbfd99737f7bfd8f3276197ef24bb3b5e",
+    "/ra-pos/main-es2015.9523739edf075aa91965.js": "2ca4a5c8ebf3501e3fd45264af2513dfcd0773e9",
+    "/ra-pos/main-es5.9523739edf075aa91965.js": "a04a03310104c50b527add178667b30ef0cc594b",
+    "/ra-pos/manifest.webmanifest": "884acf843523a3b148bae9b7c4c53218563cf098",
+    "/ra-pos/polyfills-es2015.d630f8d8d2f25c0ddc79.js": "90fb474e1a7d87bd57bc8a95fb3fd361b919d815",
+    "/ra-pos/polyfills-es5.d33101a7d00db04ac139.js": "694bec1ff7b951f42234bb9055ea01d016f0a7ac",
+    "/ra-pos/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/ra-pos/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/ra-pos/styles.352bf5d1762abe5b769b.css": "f3acdb9779becfdffb74582ba3e425eccdd62bdc"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

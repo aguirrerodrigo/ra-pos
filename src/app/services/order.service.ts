@@ -3,6 +3,7 @@ import { Order } from '@app/models/order';
 import { MenuItem } from '@app/models/menu-item';
 import { OrderItem } from '@app/models/order-item';
 import { OrderMenuMap } from './order-menu-map';
+import { isNullOrWhiteSpace } from '@app/utils';
 
 @Injectable({
 	providedIn: 'root'
@@ -39,6 +40,14 @@ export class OrderService {
 		}
 
 		this.orderUpdate.emit(this.order);
+
+		if (
+			orderItem.price === 0 ||
+			isNullOrWhiteSpace(orderItem.name) ||
+			orderItem.name === 'Miscellaneous Item'
+		) {
+			this.itemEdit.emit(orderItem);
+		}
 	}
 
 	delete(orderItem: OrderItem): void {

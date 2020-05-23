@@ -18,6 +18,7 @@ export class PaymentComponent {
 	}
 
 	set discount(value: string) {
+		this._discount = value;
 		this.payment.discount.isPercentage = value.endsWith('%');
 		if (this.payment.discount.isPercentage) {
 			value = value.substr(value.length - 1);
@@ -34,6 +35,7 @@ export class PaymentComponent {
 	}
 
 	set cash(value: string) {
+		this._cash = value;
 		const n = Number(value);
 		if (!isNaN(n)) {
 			this.payment.cash = n;

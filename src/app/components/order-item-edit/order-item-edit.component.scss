@@ -36,9 +36,11 @@
 	@extend .mt-1;
 }
 
-.input {
+.number-input {
 	@extend .ml-auto;
 	width: 60px;
+	min-width: 60px;
+	max-width: 60px;
 }
 
 .footer {
@@ -64,5 +66,89 @@
 
 	.total {
 		font-size: 1.5rem;
+	}
+}
+
+// .misc starts here
+
+.misc .item-label {
+	@extend .d-none, .d-sm-inline-block;
+}
+
+.misc .body {
+	@extend .align-items-center;
+}
+
+.misc .input-container {
+	@extend .mr-3, .w-100;
+}
+
+.form-group-misc {
+	margin-bottom: 0.25rem;
+}
+
+.misc .name-container {
+	@extend .form-group-misc, .row;
+}
+
+.col-form-label-misc {
+	@extend .text-secondary;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0;
+	font-size: 0.8rem;
+	line-height: 1.5;
+	padding-left: 21px;
+	font-weight: 500;
+}
+
+.misc .name-label {
+	@extend .col-12, .col-sm-2, .col-form-label-misc;
+}
+
+.misc .name-input-container {
+	@extend .col-12, .col-sm-10;
+}
+
+.misc .name {
+	@extend .form-control;
+}
+
+.misc .price-container {
+	@extend .form-group-misc, .row;
+}
+
+.misc .price-label {
+	@extend .col-12, .col-sm-2, .col-form-label-misc;
+}
+
+.misc .price-input-container {
+	@extend .col-12, .col-sm-10;
+}
+
+.misc .price {
+	@extend .form-control, .text-right, .mt-0;
+}
+
+.misc .number-input {
+	@extend .number-input;
+	margin-bottom: 0px;
+}
+
+@include media-breakpoint-up(sm) {
+	.col-form-label-misc {
+		padding-top: calc(0.375rem + 1px);
+		padding-bottom: calc(0.375rem + 1px);
+		margin-bottom: 0;
+		font-size: inherit;
+		line-height: 1.5;
+	}
+
+	.form-group-misc {
+		margin-bottom: 1rem;
+	}
+
+	.misc .number-input {
+		margin-bottom: 1rem;
 	}
 }

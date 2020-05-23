@@ -109,9 +109,9 @@ export class SearchComponent {
 	}
 
 	onItemClick(item: SearchResultItem): void {
-		this.itemSelect.emit(item);
 		this.search = '';
 		this.searchElement.nativeElement.focus();
+		setTimeout(() => this.itemSelect.emit(item));
 	}
 
 	focus(): void {

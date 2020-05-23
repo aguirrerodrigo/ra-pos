@@ -9,5 +9,8 @@
 	"You can delete a highlighted item by pressing the [Delete] key.",
 	"You can increase or decrease the quantity of a highlighted order by using the left and right keys.",
 	"Pressing [Enter] on a highlighted order will show the edit window.",
-	"End discount with '%' to apply percentage discount."
+	"End discount with '%' to apply percentage discount.",
+	"Miscellaneous items can be added by typing the any name in the search.",
+	"You can add the price at the end of the name of a miscellaneous item in the search.",
+	"A window will pop up when a miscellaneous item is added with incomplete details."
 ]

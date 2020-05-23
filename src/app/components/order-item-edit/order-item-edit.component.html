@@ -1,36 +1,101 @@
 <ng-template #content>
-	<div class="header">
-		<h4 class="title">{{ item.name }}</h4>
-		<h4 class="total">
-			<span class="total-label">Total:&nbsp;</span>{{ total | php }}
-		</h4>
-	</div>
-	<div class="body">
-		<div class="description">
-			<div>
-				{{ item.description }}
-			</div>
-			<div class="price">
-				{{ item.price | php }}
-			</div>
+	<form>
+		<div class="header">
+			<h4 class="title">{{ name }}</h4>
+			<h4 class="total">
+				<span class="total-label">Total:&nbsp;</span>{{ total | php }}
+			</h4>
 		</div>
-		<app-number-input
-			class="input"
-			min="1"
-			max="9999"
-			[(value)]="quantity"
-			(keydown.enter)="save()"
-		></app-number-input>
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="delete" (click)="delete()">
-			Delete
-		</button>
-		<button type="button" class="cancel" (click)="cancel()">
-			Cancel
-		</button>
-		<button type="button" class="save" (click)="save()">
-			Save
-		</button>
-	</div>
+		<div class="body">
+			<div class="description">
+				<div>
+					{{ item.description }}
+				</div>
+				<div class="price">
+					{{ priceValue | php }}
+				</div>
+			</div>
+			<app-number-input
+				class="number-input"
+				min="1"
+				max="9999"
+				[(value)]="quantity"
+			></app-number-input>
+		</div>
+		<div class="footer">
+			<button type="button" class="delete" (click)="delete()">
+				Delete
+			</button>
+			<button type="button" class="cancel" (click)="cancel()">
+				Cancel
+			</button>
+			<button type="submit" class="save" (click)="save()">
+				Save
+			</button>
+		</div>
+	</form>
+</ng-template>
+
+<ng-template #customContent>
+	<form class="misc">
+		<div class="header">
+			<h4 class="title">
+				Miscellaneous <span class="item-label">Item</span>
+			</h4>
+			<h4 class="total">
+				<span class="total-label">Total:&nbsp;</span>{{ total | php }}
+			</h4>
+		</div>
+		<div class="body">
+			<div class="input-container">
+				<div class="name-container">
+					<label for="name" class="name-label">Name</label>
+					<div class="name-input-container">
+						<input
+							#nameInput
+							type="text"
+							class="name"
+							id="name"
+							name="name"
+							[(ngModel)]="name"
+							appSelectOnFocus="delay-first-time"
+						/>
+					</div>
+				</div>
+				<div class="price-container">
+					<label for="price" class="price-label">Price</label>
+					<div class="price-input-container">
+						<input
+							type="text"
+							class="price"
+							id="price"
+							name="price"
+							autocomplete="off"
+							[(ngModel)]="price"
+							(focus)="formatPriceFromValue()"
+							(focusout)="formatPrice()"
+							appSelectOnFocus="delay-always"
+						/>
+					</div>
+				</div>
+			</div>
+			<app-number-input
+				class="number-input"
+				min="1"
+				max="9999"
+				[(value)]="quantity"
+			></app-number-input>
+		</div>
+		<div class="footer">
+			<button type="button" class="delete" (click)="delete()">
+				Delete
+			</button>
+			<button type="button" class="cancel" (click)="cancel()">
+				Cancel
+			</button>
+			<button type="submit" class="save" (click)="save()">
+				Save
+			</button>
+		</div>
+	</form>
 </ng-template>

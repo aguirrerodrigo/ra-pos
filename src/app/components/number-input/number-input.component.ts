@@ -16,7 +16,7 @@ export class NumberInputComponent {
 	}
 
 	@Input() set value(n: number) {
-		this._value = n;
+		this._value = n || this.min;
 		this.valueChange.emit(this._value);
 	}
 

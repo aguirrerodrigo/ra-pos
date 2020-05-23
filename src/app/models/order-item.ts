@@ -5,6 +5,7 @@ export class OrderItem {
 	description = '';
 	price = 0;
 	quantity = 1;
+	custom = false;
 
 	get total(): number {
 		return this.price * this.quantity;
@@ -14,5 +15,6 @@ export class OrderItem {
 		this.name = menuItem.name;
 		this.description = menuItem.description;
 		this.price = menuItem.price;
+		this.custom = menuItem.custom;
 	}
 }

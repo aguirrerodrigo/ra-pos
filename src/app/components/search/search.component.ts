@@ -118,6 +118,11 @@ export class SearchComponent {
 		this.searchElement.nativeElement.focus();
 	}
 
+	clear(): void {
+		this.search = '';
+		this.focus();
+	}
+
 	private createResult(items: Set<SearchItem>): SearchResultItem[] {
 		const result: SearchResultItem[] = [];
 		for (const item of items) {

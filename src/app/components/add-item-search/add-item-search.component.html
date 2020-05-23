@@ -1,7 +1,7 @@
 <div class="search-container">
 	<div class="search-container-absolute">
 		<div class="search">
-			<fa-icon [icon]="['fas', 'search']"></fa-icon>
+			<fa-icon class="search-icon" [icon]="['fas', 'search']"></fa-icon>
 			<input
 				#searchInput
 				appAutoType
@@ -14,6 +14,12 @@
 				(keyup.esc)="onEscKey($event)"
 				autofocus
 			/>
+			<fa-icon
+				*ngIf="search?.length > 0"
+				class="x-icon"
+				[icon]="['fas', 'times']"
+				(click)="clear()"
+			></fa-icon>
 		</div>
 		<div *ngIf="quantity > 1 || result.length > 0" class="result">
 			<div *ngIf="quantity > 1" class="result-header">

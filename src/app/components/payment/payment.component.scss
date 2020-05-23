@@ -78,11 +78,11 @@
 }
 
 .checkout-container {
-	@extend .m-4, .float-right;
+	@extend .m-4, .float-right, .text-secondary;
 }
 
 .cancel {
-	@extend .btn, .btn-light, .ml-1;
+	@extend .btn, .btn-secondary, .ml-1;
 }
 
 .checkout {

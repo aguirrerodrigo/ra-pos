@@ -78,7 +78,8 @@
 }
 
 .checkout-container {
-	@extend .m-4, .float-right, .text-secondary;
+	@extend .float-right, .text-secondary;
+	margin: 1.5rem 1rem;
 }
 
 .cancel {

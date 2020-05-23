@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from '@src/environments/environment';
 
 import {
 	FontAwesomeModule,
@@ -27,6 +28,7 @@ import { ScrollIntoViewDirective } from './directives/scroll-into-view.directive
 import { SelectOnFocusDirective } from './directives/select-on-focus.directive';
 
 import { PhpCurrencyPipe } from './pipes/php-currency.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
 	declarations: [
@@ -51,7 +53,10 @@ import { PhpCurrencyPipe } from './pipes/php-currency.pipe';
 		AppRoutingModule,
 		FormsModule,
 		NgbModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production
+		})
 	],
 	providers: [],
 	bootstrap: [AppComponent]

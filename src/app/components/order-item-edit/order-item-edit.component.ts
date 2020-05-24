@@ -70,11 +70,13 @@ export class OrderItemEditComponent {
 		this.quantity = item.quantity;
 		this.formatPrice();
 
-		if (this.item.custom) {
-			this.modal = this.modalService.open(this.customContent);
-		} else {
-			this.modal = this.modalService.open(this.content);
-		}
+		setTimeout(() => {
+			if (this.item.custom) {
+				this.modal = this.modalService.open(this.customContent);
+			} else {
+				this.modal = this.modalService.open(this.content);
+			}
+		});
 	}
 
 	formatPrice(): void {

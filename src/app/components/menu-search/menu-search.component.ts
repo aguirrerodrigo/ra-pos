@@ -9,6 +9,7 @@ import { AcronymStrategy } from '@app/components/search/models/acronym-strategy'
 import { BurgerWordStrategy } from './models/burger-word-strategy';
 import { BurgerAcronymStrategy } from './models/burger-acronym-strategy';
 import { AddItemSearchComponent } from '@app/components/add-item-search/add-item-search.component';
+import { SearchResultItem } from '@app/components/search/models/search-result-item';
 
 @Component({
 	selector: 'app-menu-search',
@@ -46,7 +47,7 @@ export class MenuSearchComponent {
 		return result;
 	}
 
-	onSelect(searchItem: SearchItem, quantity: number): void {
-		this.orderService.add(searchItem.model, quantity);
+	onSelect(searchResultItem: SearchResultItem, quantity: number): void {
+		this.orderService.add(searchResultItem.model, quantity);
 	}
 }

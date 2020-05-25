@@ -34,7 +34,7 @@ export class OrderComponent {
 		this.generateRandomInfo();
 	}
 
-	onArrowUpKey(e: KeyboardEvent): void {
+	onArrowUpKey(e: Event): void {
 		e.preventDefault();
 
 		if (this.selectedIndex > 0) {
@@ -43,7 +43,7 @@ export class OrderComponent {
 		}
 	}
 
-	onArrowDownKey(e: KeyboardEvent): void {
+	onArrowDownKey(e: Event): void {
 		e.preventDefault();
 
 		if (this.selectedIndex < this.order.items.length - 1) {
@@ -52,13 +52,13 @@ export class OrderComponent {
 		}
 	}
 
-	onEnterKey(e: KeyboardEvent): void {
+	onEnterKey(e: Event): void {
 		e.preventDefault();
 
 		this.orderService.itemEdit.emit(this.order.items[this.selectedIndex]);
 	}
 
-	onArrowLeftKey(e: KeyboardEvent): void {
+	onArrowLeftKey(e: Event): void {
 		e.preventDefault();
 
 		if (this.order.items.length === 0) return;
@@ -71,7 +71,7 @@ export class OrderComponent {
 		}
 	}
 
-	onArrowRightKey(e: KeyboardEvent): void {
+	onArrowRightKey(e: Event): void {
 		e.preventDefault();
 
 		if (this.order.items.length === 0) return;
@@ -84,7 +84,7 @@ export class OrderComponent {
 		}
 	}
 
-	onDeleteKey(e: KeyboardEvent): void {
+	onDeleteKey(e: Event): void {
 		e.preventDefault();
 
 		const item = this.order.items[this.selectedIndex];

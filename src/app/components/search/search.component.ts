@@ -76,7 +76,7 @@ export class SearchComponent {
 
 	@Output() readonly itemSelect = new EventEmitter<SearchResultItem>();
 
-	onArrowDownKey(e: KeyboardEvent): void {
+	onArrowDownKey(e: Event): void {
 		e.preventDefault();
 
 		if (this.selectedIndex < this.result.length - 1) {
@@ -84,7 +84,7 @@ export class SearchComponent {
 		}
 	}
 
-	onArrowUpKey(e: KeyboardEvent): void {
+	onArrowUpKey(e: Event): void {
 		e.preventDefault();
 
 		if (this.selectedIndex > 0) {
@@ -92,7 +92,7 @@ export class SearchComponent {
 		}
 	}
 
-	onEnterKey(e: KeyboardEvent): void {
+	onEnterKey(e: Event): void {
 		e.preventDefault();
 
 		if (!this.result || this.result.length === 0) return;
@@ -101,7 +101,7 @@ export class SearchComponent {
 		this.search = '';
 	}
 
-	onEscKey(e: KeyboardEvent): void {
+	onEscKey(e: Event): void {
 		e.preventDefault();
 
 		(e.target as HTMLInputElement).value = '';

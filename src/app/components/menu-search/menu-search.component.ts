@@ -48,6 +48,6 @@ export class MenuSearchComponent {
 	}
 
 	onSelect(searchResultItem: SearchResultItem, quantity: number): void {
-		this.orderService.add(searchResultItem.model, quantity);
+		setTimeout(() => this.orderService.add(searchResultItem.model, quantity));
 	}
 }

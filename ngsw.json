@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1590496767146,
+  "timestamp": 1590497161977,
   "index": "/ra-pos/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/ra-pos/favicon.ico",
         "/ra-pos/index.html",
-        "/ra-pos/main-es2015.cc4240a559872be25b41.js",
-        "/ra-pos/main-es5.cc4240a559872be25b41.js",
+        "/ra-pos/main-es2015.c31b921914d012628e1d.js",
+        "/ra-pos/main-es5.c31b921914d012628e1d.js",
         "/ra-pos/manifest.webmanifest",
         "/ra-pos/polyfills-es2015.d630f8d8d2f25c0ddc79.js",
         "/ra-pos/polyfills-es5.d33101a7d00db04ac139.js",
@@ -55,9 +55,9 @@
     "/ra-pos/assets/json/info.json": "2e22abe55f5bda3e53cdf8874b5688aa1840c796",
     "/ra-pos/assets/json/menu.json": "cd965d70c23277750cd193ff583bdbd92e74bc2e",
     "/ra-pos/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ra-pos/index.html": "0bdf207389888111d05c16b4bd4e36a1acea3b02",
-    "/ra-pos/main-es2015.cc4240a559872be25b41.js": "c3a553581ed367683a77c3274b9dcfed76d7eac5",
-    "/ra-pos/main-es5.cc4240a559872be25b41.js": "f00c1304a95c5b9cfec4ce9dd7c55cc030fb31fd",
+    "/ra-pos/index.html": "922100480a23996846b2a7a15194ba1c736aee66",
+    "/ra-pos/main-es2015.c31b921914d012628e1d.js": "fc678abbbdca37b6194223719f5055be834be4f7",
+    "/ra-pos/main-es5.c31b921914d012628e1d.js": "6e35168e4b5542d013b2834fe32d0f0988cc9d23",
     "/ra-pos/manifest.webmanifest": "884acf843523a3b148bae9b7c4c53218563cf098",
     "/ra-pos/polyfills-es2015.d630f8d8d2f25c0ddc79.js": "90fb474e1a7d87bd57bc8a95fb3fd361b919d815",
     "/ra-pos/polyfills-es5.d33101a7d00db04ac139.js": "694bec1ff7b951f42234bb9055ea01d016f0a7ac",

@@ -70,6 +70,8 @@ export class AddItemSearchComponent extends SearchComponent {
 			price = Number(p);
 			if (!isNaN(price)) {
 				name = name.substr(0, name.length - p.length);
+			} else {
+				price = 0;
 			}
 		}
 
@@ -92,9 +94,13 @@ export class AddItemSearchComponent extends SearchComponent {
 
 	private getMiscItemPrice(name: string): string {
 		let price = '';
+		let hasDecimal = false;
 		for (let i = name.length - 1; i >= 0; i--) {
 			const c = name[i];
-			if ('0' <= c && c <= '9') {
+			if (c === '.' && !hasDecimal) {
+				price = c + price;
+				hasDecimal = true;
+			} else if ('0' <= c && c <= '9') {
 				price = c + price;
 			} else {
 				break;
